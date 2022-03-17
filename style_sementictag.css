@@ -1,0 +1,52 @@
+.container {
+    border: 1px solid red;
+    width: 1200px;
+    margin: auto;
+}
+header {
+    background-color: skyblue;
+    overflow: hidden;
+}
+
+/* 공통적인거는 묶어주고 */
+header article {
+    background-color: gray;
+    width: 300px;
+    height: 100px;
+}
+.logo {
+    float: left;
+}
+.navi {
+    float: right;
+}
+
+.box1 {
+    background-color: yellowgreen;
+    height: 300px;
+}
+
+/* 공통적인거는 묶어주고 + height잃었을때 찾아주기*/
+.box2 {
+    background-color: greenyellow;
+    border: 5px solid blue;
+    overflow: hidden;
+}
+.box2 article{
+    width: 33.33333333%; /* 소숫점 많으면 1px도 차이 안남 */
+    height: 300px;
+    float: left;
+}
+.sub1{
+    background-color:darkgray;
+}
+.sub2{
+    background-color: lightgray;
+}
+.sub3{
+    background-color: lightslategray;
+}
+footer {
+    background-color: skyblue;
+    height: 100px;
+}
