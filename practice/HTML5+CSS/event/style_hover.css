@@ -1,0 +1,98 @@
+body{
+    background-color: #fff;
+    color: #333;
+    font-size: 15px;
+}
+/* a tag는 body tag 적용안됨 */
+/* a{
+    color: #333;
+    text-decoration: none;
+    /* transition은 event가 아닌곳에 넣어줘야한다 >> 그래야 마우스 hover시와 나왔을시 둘다 가능 */
+    transition: 0.2s;
+}
+a:hover{
+    color: dodgerblue;
+    text-decoration: uderline;
+} */
+
+.button{
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.button:hover{
+    background-color: #000;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.box{
+    border: 5px solid #000;
+    text-align: center;
+}
+.box div{
+    border: 5px solid #000;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+
+/* nth-child는 tag type을 체크하기에 div만 보고 싶으면 nth-of-type로 */
+.box div:nth-of-type(1){
+    background-color: dodgerblue;
+}
+.box div:nth-of-type(2){
+    background-color: red;
+}
+.box div:nth-of-type(3){
+    background-color: #fff;
+}
+.box div:nth-of-type(4){
+    background-color: gold;
+}
+
+
+/* last-child > 게시물 그리기 */
+.tab-inner{
+    width: 400px;
+}
+
+.btn span{
+    background-color: #ddd;
+    width: 120px;
+    /* inline-block은 기본적으로 margin이 조금 있음 */
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    /* a 태그가 아니지만 손가락이 나오게 하는것 */
+    cursor: pointer;
+    border: 1px solid #000;
+    margin-right: -7px;
+}
+.btn span:first-child{
+    background-color: #fff;
+}
+.btn span:last-child{
+    color: red;
+}
+.tab{
+    border: 1px solid #000;
+}
+.tab a{
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin: 5px;
+    border-bottom: 1px solid #000;
+}
+.tab a:last-child{
+    border-bottom: none;
+}
