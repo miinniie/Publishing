@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    a{
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+      background-color: #ddd;
+      width: 100px;
+      text-align: center;
+      padding: 5px;
+    }
+    div{
+      background-color: dodgerblue;
+      height: 200px;
+      margin-top: 10px;
+      width: 230px;
+      color: #fff;
+      text-align: center;
+      line-height: 200px;
+      display: none;
+    }
+
+  </style>  
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js">
+  </script>
+
+  
+</head>
+<body>
+  
+  <a class="show-btn" href="#none">보이기</a>
+  <a class="hide-btn" href="#none">감추기</a>
+  <p>
+    태그 선택자 a를 클랙했습니다.
+  </p>
+
+  <a class="show-btn2" href="#none">보이기</a>
+  <a class="hide-btn2" href="#none">감추기</a>
+  <div>Box</div>
+
+  <a class="btn" href="#none">보이기/감추기</a>
+  <div class="new-box">Box</div>
+  <!-- jQuery는 반드시 <head>태그에 넣게되면 html읽고 나서읽는걸 널어주거나 <body>바로 위에다가 넣어줘야한다 -->
+  <!-- 
+  <script src="script/jquery-1.12.4.js"></script>
+  <script src="script/custom.js"></script>
+  -->
+  <script src="script/custom.js"></script>
+
+</body>
+</html>
