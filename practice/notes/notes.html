@@ -224,16 +224,68 @@
       top: 0;
       left: 0;
     }
+
     .child-location2-sub2{
       position: absolute;
-      background-color: dodgerblue;
+      background-color: rgb(255, 214, 30);
+      width: 100px;
+      height: 100px;
+      bottom: 0;
+      left: 0;
+    }
+    .child-location2-sub3{
+      position: absolute;
+      background-color: rgba(255, 30, 206, 0.308);
       width: 100px;
       height: 100px;
       top: 0;
+      right: 0;
+    }
+    .child-location2-sub4{
+      position: absolute;
+      background-color: rgba(29, 173, 36, 0.308);
+      width: 100px;
+      height: 100px;
+      bottom: 0;
+      right: 0;
+    }
+    .child-location2-sub5{
+      position: absolute;
+      background-color: rgba(235, 12, 23, 0.308);
+      width: 100px;
+      height: 100px;
+      top: 50% ;
+      left: 50%;
+      /* 기준점이 좌측 상단 꼭지점이니 다시 50%만큼 이동해야 꼭지점이 정중앙임 */
+      transform: translate(-50%,-50%);
+    }
+
+    .child-location2-out1{
+      position: absolute;
+      background-color: rgb(223, 105, 69);
+      width: 100px;
+      height: 100px;
+      top: 100% ;
       left: 0;
     }
-    
-    
+    .child-location2-out2{
+      position: absolute;
+      background-color: rgb(19, 226, 30);
+      width: 100px;
+      height: 100px;
+      top: 0;
+      left: 100%;
+    }
+    .child-location2-out3{
+      position: absolute;
+      background-color: rgb(56, 25, 167);
+      width: 100px;
+      height: 100px;
+      top: 100% ;
+      left: 100%;
+    }
+
+        
   </style>
 
 </head>
@@ -312,6 +364,10 @@
     <div class="child-location2-sub3"></div>
     <div class="child-location2-sub4"></div>
     <div class="child-location2-sub5"></div>
+
+    <div class="child-location2-out1"></div>
+    <div class="child-location2-out2"></div>
+    <div class="child-location2-out3"></div>
   </div>
 </body>
 </html>
