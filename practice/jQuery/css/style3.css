@@ -1,0 +1,42 @@
+.menu{
+  padding: 0;
+  list-style: none;
+  width: 200px;
+  text-align: center;
+  /* border: 1px solid red; */
+}
+.menu li > a{
+  background-color: #000;
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+.sub-menu{
+  border: 1px solid #000;
+  display: none;
+}
+.sub-menu a{
+  display: block;
+  padding: 5px;
+}
+
+.btn{
+  /* border: 1px solid red; */
+  width: 300px;
+}
+.btn span{
+  background-color: #ccc;
+  padding: 5px;
+  width: 100px;
+  /* inline요소는 크기값을 가질 수 없음 */
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn span.active{
+  background-color: #fff;
+  border: 1px solid #000;
+}

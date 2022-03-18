@@ -1,0 +1,48 @@
+.container{
+    width: 300px;
+}
+a{
+    background-color: #ddd;
+    color: #000;
+    text-decoration: none;
+    padding: 5px;
+    width: 70px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+}
+.container div{
+    background-color:dodgerblue;
+    width: 250px;
+    height: 300px;
+    margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    /*요소의 높이값인 height: 300px; 만큼 주면 정중앙으로감 */
+    line-height: 300px;
+}
+.container2 div{
+    background-color:dodgerblue;
+    width: 250px;
+    height: 300px;
+    margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    /*요소의 높이값인 height: 300px; 만큼 주면 정중앙으로감 */
+    line-height: 300px;
+}
+.container3 div{
+    background-color:dodgerblue;
+    width: 250px;
+    height: 300px;
+    margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    /*요소의 높이값인 height: 300px; 만큼 주면 정중앙으로감 */
+    line-height: 300px;
+}
+/* 이미 상위에 div 전체가 가진css가 있다면은 div가 가지는 class를 써도 적용 안됨 >> 이럴때는 div.active(div.class)로 써줘야함 */
+.container3 div.active{
+    background-color: red;
+
+}
