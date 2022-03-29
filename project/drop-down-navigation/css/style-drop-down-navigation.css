@@ -1,106 +1,16 @@
-@import url('http://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('http://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
 
 body{
-  font-size: 'Raleway',sans-serif;
+  font-family: 'Noto Sans KR', 'sans-serif';
+  color: #222;
   line-height: 1.5em;
-  margin: 0;
-  font-weight: 300;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 a{
+  color: #222;
   text-decoration: none;
 }
 
-.container{
-  display: flex; /* 전체가 가로로 겅렬됨 */
-}
-
-.square {
-  width: 400px;
-  height: 400px;
-  position: relative;
-  margin: 40px;
-}
-.square span {
-  position: absolute;
-  width: 100%;/* inherit하면은 부모의 400px을 그대로 받아오는거라 같음 */
-  height: 100%;
-  border: 1px solid #fff;
-  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%; /* 중첩해서 radius 사용 */
-  transition: 0.5s; /* mouse hover시 0.5S */
-  animation: circle 5s linear infinite;
-}
-
-.square:nth-child(1):hover span{
-  background-color: crimson;
-  border: none;
-}
-.square:nth-child(2):hover span{
-  background-color: dodgerblue;
-  border: none;
-}
-.square:nth-child(3):hover span{
-  background-color: yellowgreen;
-  border: none;
-}
-/* .square:hover span{
-  background-color: crimson;
-  border: none;
-}
-*/
-
-.square span:nth-child(1) {
-  animation: circle 6s linear infinite;
-}
-.square span:nth-child(2) {
-  animation: circle 4s linear infinite;
-  animation-direction: reverse;
-}
-.square span:nth-child(3) {
-  animation: circle 10s linear infinite;
-} 
-
-.square:hover span:nth-child(1){
-  opacity: 0.3;
-}
-.square:hover span:nth-child(2){
-  opacity: 0.6;
-}
-.square:hover span:nth-child(3){
-  opacity: 0.8;
-}
-
-.square div{
-  /* border: 1px solid red; */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 80%;
-  text-align: center;
-  color: #fff;
-}
-
-.square div a{
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
-  padding: 8px;
-}
-@keyframes circle{
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+.dropdown {}
+.dropdwon-btn {}
+.dropdown-subm {}
