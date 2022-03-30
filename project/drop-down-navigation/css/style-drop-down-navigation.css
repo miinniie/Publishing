@@ -11,6 +11,38 @@ a{
   text-decoration: none;
 }
 
-.dropdown {}
-.dropdwon-btn {}
-.dropdown-subm {}
+
+.dropdown {
+  /* border: 1px solid #000; 확인용 */
+  /* width: 200px; 이거 보다는 inline주는게,, */
+  display: inline-block;
+  width: 200px;
+}
+.dropdown-btn {
+  /* width: 200px; */
+  width: inherit;
+  padding: 10px;
+  font-size: 18px;
+  background-color: yellowgreen;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.dropdown-submenu {
+  display: none;
+  /* width: 200px; */
+  width: inherit;
+  box-shadow: 0 0 10px rgba(0,0,0,0.17);
+}
+.dropdown-submenu a {
+  display: block;
+  padding: 7px;
+  text-align: center;
+}
+.dropdown-submenu a:hover {
+  background-color: #eee;
+}
+.dropdown:hover .dropdown-submenu {
+  display: block;
+}
