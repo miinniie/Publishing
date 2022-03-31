@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>sementic tag layout</title>
+</head>
+
+<style>
+  .container {
+    border: 1px solid red;
+    width: 1200px;
+    margin: auto;
+  }
+  header {
+    background-color: skyblue;
+    overflow: hidden;
+    <!-- 높이값은 따로 줄 필요가 없음 (자식요소가 늘어나면 자동적으로 늘어남) -->
+  }
+  header article {
+    background-color: gray;
+    width: 300px;
+    height: 100px;
+  }
+  .logo {
+    float: left;
+  }
+  .navi {
+    float: right;
+  }
+
+  .box1 {
+    background-color: yellowgreen;
+    height: 300px;
+  }
+  .box2 {
+    background-color: greenyellow;
+    overflow: hidden;
+  }
+  .box2 article {
+    width: 33.3333%;
+    height: 300px;
+    float: left;
+  }
+  .sub1 {
+    background-color: darkgray;
+  }
+  .sub2 {
+    background-color: lightgray;
+  }
+  .sub3 {
+    background-color: lightslategray;
+  }
+
+  footer {
+    background-color: skyblue;
+    height: 100px;
+  }
+
+</style>
+
+<body>
+
+  <div class="container">
+    <header>
+      <article class="logo"></article>
+      <article class="navi"></article>
+    </header>
+    <section class="box1"></section>
+    <section class="box2">
+      <article class="sub1"></article>
+      <article class="sub2"></article>
+      <article class="sub3"></article>
+    </section>
+    <footer></footer>
+  </div>
+
+</body>
+</html>
