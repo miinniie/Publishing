@@ -59,3 +59,12 @@ GitHub supports emoji!
       transform: translateY(-50%);
     } 
     ```
+    ```
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      <!-- 높이 값을 줘야 수직 중앙 할 수 있음 -->
+      height: 100vh;
+    }
+    ```
