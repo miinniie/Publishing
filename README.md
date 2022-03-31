@@ -49,3 +49,13 @@ GitHub supports emoji!
 - 가로배치하는 2가지 방법
   - float와 overflow를 활용하여 배치 : 1px 오차 없이 가능 (box-sizing: border-box로 border값까지 계산)
   - display: inline-block으로 배치
+
+  - 수직 중앙 배치
+    - css code
+    ```
+    .div {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    } 
+    ```
