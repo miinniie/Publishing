@@ -60,6 +60,7 @@ GitHub supports emoji!
 - ul,li bullet 없애기
   ```
   ul, li{
+    list-style: none;
     list-style-type: none;
   }
   ```
@@ -106,6 +107,15 @@ GitHub supports emoji!
       display: inline-block;
     }
     ```
+  - 3.flex 이용
+  ```
+  .parent{
+    display: flex;
+  }
+  .siblings{
+    flex:1;
+  }
+  ```
 <br>
 
 - 수직 중앙 배치
