@@ -47,14 +47,16 @@ GitHub supports emoji!
     <li>세번째 목록</li>
   </ul>
   ```
-
-<br>
-
 - box가 margin과 padding의 영향을 안받게
   ```
   box-sizing: border-box
   ```
-
+- btn에 cursor 주기
+  ```
+  btn{
+    cursor: pointer;
+  }
+  ```  
 <br>
 
 - position 속성
