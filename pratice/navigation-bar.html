@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Navigation Bar</title>
+</head>
+
+<style>
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .dropdown{
+    border: 1px solid red;
+    width: 200px;
+    height: 30px;
+  }
+  .dropdown-btn{
+    width: inherit;
+    height: 30px;
+    background-color: darkgray;
+    color: white;
+    border: 1px solid blue;
+  }
+  .dropdown-submenu {
+    width: inherit;
+  }
+
+  .dropdown-submenu a{
+    font-size: 0.9em;
+    height: inherit;
+    width: inherit;
+    display: inline-block;
+    background-color: lightgrey;
+    padding: 3px 0 3px 5px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+  }
+
+</style>
+
+<body>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Real Estate Type</button>
+    <div class="dropdown-submenu">
+      <a href="#none">All</a>
+      <a href="#none">One room</a>
+      <a href="#none">1.5 rooms</a>
+      <a href="#none">Two Room</a>
+      <a href="#none">Three Room</a>
+      <a href="#none">Officetel</a>
+      <a href="#none">Apartment</a>
+    </div>
+
+  </div>
+</body>
+</html>
