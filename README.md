@@ -56,19 +56,24 @@ GitHub supports emoji!
   btn{
     cursor: pointer;
   }
-  ```  
+  ``` 
+- ul,li bullet 없애기
+  ```
+  ul, li{
+    list-style-type: none;
+  }
+  ```
 <br>
 
 - position 속성
-  - 부모: 
-    ```
-    .parent {
-      position: reletive;
-    }
-    .siblings{
-      position: absolute
-    }
-    ```
+  ```
+  .parent {
+    position: reletive;
+  }
+  .siblings{
+    position: absolute;
+  }
+  ```
 
 <br>
 
@@ -90,6 +95,8 @@ GitHub supports emoji!
     }
     .siblings {
       float: left;
+      <!-- border사이즈에 영향 받게 1px 까지 하기 위해 -->
+      box-sizing: border-box;
     }
     ```
   - 2.자식요소 display: inline-block으로 배치
