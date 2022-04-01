@@ -10,32 +10,35 @@
     color: black;
     text-decoration: none;
   }
-
   .dropdown{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 200px;
-    height: 30px;
   }
   .dropdown-btn{
     width: inherit;
     height: 30px;
     background-color: darkgray;
     color: white;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
+    cursor: pointer;
   }
   .dropdown-submenu {
+    display: none;
     width: inherit;
+    transition: 1s;
   }
-
+.dropdown-btn:hover .dropdown-submenu {
+  display: block;
+}
   .dropdown-submenu a{
     font-size: 0.9em;
-    height: inherit;
+    height: 30px;
     width: inherit;
-    display: inline-block;
+    /* display: none; */
     background-color: lightgrey;
     padding: 3px 0 3px 5px;
     box-sizing: border-box;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
   }
 
 </style>
