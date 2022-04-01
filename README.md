@@ -47,10 +47,17 @@ GitHub supports emoji!
     <li>세번째 목록</li>
   </ul>
   ```
-- box가 margin과 padding의 영향을 안받게
-  ```
-  box-sizing: border-box
-  ```
+- 영향을 안받게 하기
+  - 자식 요소에 크기에 따라 영향 안받게
+    ```
+    .parent{
+      overflow: hidden;
+    }
+    ```
+  - box가 margin과 padding의 영향을 안받게
+    ```
+    box-sizing: border-box
+    ```
 - btn에 cursor 주기
   ```
   btn{
