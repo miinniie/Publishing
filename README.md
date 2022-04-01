@@ -35,42 +35,43 @@ GitHub supports emoji!
 
 ## Notes
 - ol, li tag 을 활용한 네비게이션(ul 닫는 태그 위치 헷갈리지 말자!)
-```
-<ul>
-  <li>첫번째 목록</li>
-  <li>두번째 목록
-    <ul>
-      <li>두번째의 첫번째 목록</li>
-      <li>두번째의 두번째 목록</li>
-    </ul>
-  </li>
-  <li>세번째 목록</li>
-</ul>
-```
+  ```
+  <ul>
+    <li>첫번째 목록</li>
+    <li>두번째 목록
+      <ul>
+        <li>두번째의 첫번째 목록</li>
+        <li>두번째의 두번째 목록</li>
+      </ul>
+    </li>
+    <li>세번째 목록</li>
+  </ul>
+  ```
 
 <br>
 
 - box가 margin과 padding의 영향을 안받게
-```
-box-sizing: border-box
-```
+  ```
+  box-sizing: border-box
+  ```
 
 <br>
 
 - position 속성
   - 부모: 
-  ```
-  position: reletive
-  ```
-  - 자식:
-  ``` 
-  position: absolute
-  ```
+    ```
+    .parent {
+      position: reletive;
+    }
+    .siblings{
+      position: absolute
+    }
+    ```
 
 <br>
 
 - float 속성  
-💦 자식에 float속성이 있으면 부모요소에 overflow: hidden 또는 자식의 높이값만큼 height 준다
+💦 자식에 float속성이 있으면 부모요소에 overflow: hidden 또는 자식의 높이값 만큼 height 준다
   - left
   - right
   - margin: auto
@@ -79,11 +80,27 @@ box-sizing: border-box
 <br>
 
 - 가로배치하는 2가지 방법
-  - float와 overflow를 활용하여 배치 : 1px 오차 없이 가능
-  - display: inline-block으로 배치
+  - 1.float와 overflow를 활용하여 배치 : 1px 오차 없이 가능
+    ```
+    .parent {
+      <!-- 자식의 높이값을 찾을 수 있게 -->
+      overflow: hidden;
+    }
+    .siblings {
+      float: left;
+    }
+    ```
+  - 2.자식요소 display: inline-block으로 배치
+    ```
+    .siblings {
+      <!-- inline 속성으로 강제 변환 -->
+      display: inline-block;
+    }
+    ```
+<br>
 
-  - 수직 중앙 배치
-    - css code
+- 수직 중앙 배치
+  - css code
     ```
     .div {
       position: absolute;
