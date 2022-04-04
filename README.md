@@ -76,7 +76,7 @@ GitHub supports emoji!
 - position 속성
   ```
   .parent {
-    position: reletive;
+    position: relative;
   }
   .siblings{
     position: absolute;
