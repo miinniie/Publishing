@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<style>
+  /* .outer-box {border:1px solid black; width: 300px;}
+  .outer-box .top > h3 {margin-left: 20px;}
+  .outer-box .top > span {float:right; margin-top: 20px; margin-right: 10px;}
+  .outer-box .title {display: inline-block} */
+  body {padding: 30px;}
+  * {margin: 0;padding: 0;font-size: 14px;line-height: 1.4; color: black;}
+  ul, ol, li {list-style: none;}
+
+  /* 
+  .box                                                  {position:relative; width: 400px; height: 300px; border: 1px solid black;}
+  .box h4.boxTit                                        {font-size: 16px; font-weight: bold;}
+  .box ul.noticeWrop                                    {position: absolute; width: 100%; left: 0;top: 0;}
+  .box ul.noticeWrop li.notice                          {position: absolute; width: 100%; padding: 10px; box-sizing: border-box;} 
+  .box ul.noticeWrop li.notice a.tabTit                 {font-weight: bold;}
+  .box ul.noticeWrop li.notice.active a.tabTit          {color: blue; text-decoration: underline;}
+  .box ul.noticeWrop li.notice.bbs1 a.tabTit            {margin-left: 100px;}
+  .box ul.noticeWrop li.notice.bbs2 a.tabTit            {margin-left: 200px;}
+  .box ul.noticeWrop li.notice .bbsWrap                 {display: none; margin-top: 10px;}
+  .box ul.noticeWrop li.notice.active .bbsWrap          {display: block; }
+  .box ul.noticeWrop li.notice .bbsWrap ul              {}
+  .box ul.noticeWrop li.notice .bbsWrap ul li           {width: 100%; overflow: hidden;}
+  .box ul.noticeWrop li.notice .bbsWrap ul li a         {float: left; width: 300px; text-overflow: ellipsis; overflow: hidden; white-space: ;}
+  .box ul.noticeWrop li.notice .bbsWrap ul li span      {float: right;}
+  .box ul.noticeWrop li.notice .bbsWrap a.more          {position: absolute; right: 10px; top: 10px;} 
+  */
+
+  .box                                                  {position:relative; width: 400px; height: 300px; padding: 10px; border: 1px solid black;}
+  .box h4.boxTit                                        {font-size: 16px; font-weight: bold; float:left}
+  .box ul.noticeWrop                                    {overflow: hidden; width: 100%;}
+  .box ul.noticeWrop li.notice                          {float: left; padding-left: 50px;} 
+  .box ul.noticeWrop li.notice a.tabTit                 {font-weight: bold; margin-left: 10px;}
+  .box ul.noticeWrop li.notice:first-child a.tabTit     {margin-left: 0px;}
+  .box ul.noticeWrop li.notice.active a.tabTit          {color: blue; text-decoration: underline;}
+  .box ul.noticeWrop li.notice.bbs1 a.tabTit            {}
+  .box ul.noticeWrop li.notice.bbs2 a.tabTit            {}
+  .box ul.noticeWrop li.notice .bbsWrap                 {position: absolute; left: 10px; display: none; margin-top: 10px;}
+  .box ul.noticeWrop li.notice.active .bbsWrap          {display: block; }
+  .box ul.noticeWrop li.notice .bbsWrap ul              {}
+  .box ul.noticeWrop li.notice .bbsWrap ul li           {width: 100%; overflow: hidden;}
+  .box ul.noticeWrop li.notice .bbsWrap ul li a         {float: left; width: 300px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;} /* 너무 길면 점점점 표시.. */
+  .box ul.noticeWrop li.notice .bbsWrap ul li span      {float: right;}
+  .box ul.noticeWrop li.notice .bbsWrap a.more          {position: absolute; right: 10px; top: -25px;} 
+
+</style>
+<body>
+  <div class="box">
+    <!-- <h4 class="boxTit">시민게시판</h4> -->
+
+    <ul class="noticeWrop">
+
+      <li class="notice bbs1 active"> <!-- 같은 레벨에서 같은 클래스를 가지는게 좋다  -->        
+        <a href="#" class="tabTit" id="notice001">칭찬</a>
+        <div class="bbsWrap">
+          <ul class="bbs">
+            <li class="item"><a href="#" class="tit">제목</a><span class="date">2022.05.26</span></li>
+            <li class="item"><a href="#" class="tit">제목</a><span class="date">2022.05.26</span></li>
+            <li class="item"><a href="#" class="tit">제목</a><span class="date">2022.05.26</span></li>
+            <li class="item"><a href="#" class="tit">제목</a><span class="date">2022.05.26</span></li>
+          </ul>
+          <a href="#" class="more">more</a>
+        </div>
+      </li>
+
+      <li class="notice bbs2"> <!-- 같은 레벨에서 같은 클래스를 가지는게 좋다  -->        
+        <a href="#" class="tabTit" id="notice001">자유</a>
+        <div class="bbsWrap">
+          <ul class="bbs">
+            <li class="item"><a href="#" class="tit">제목</a><span class="date">2022.05.26</span></li>
+            <li class="item"><a href="#" class="tit">제목</a><span class="date">2022.05.26</span></li>
+            <li class="item"><a href="#" class="tit">제목</a><span class="date">2022.05.26</span></li>
+            <li class="item"><a href="#" class="tit">제목</a><span class="date">2022.05.26</span></li>
+          </ul>
+          <a href="#" class="more">more</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js">
+  
+  var tabLnk = $("#notice001 .tabTit")
+  var tabLi = $("#notice001 .notice")
+
+  tabLnk.each(function(n){
+    this.n = n
+  })
+
+  tabLnk.on("click",function(){
+    console.log(this.n)
+    tabLi.removeClass("active").eq(0).addClass("active")
+  })
+  </script>
+
+
+
+</body>
+</html>
+
+  <!-- <div class="outer-box">
+    <div class="top">
+      <h3 class="title">시민게시판</h3>
+      <span><a href="#">칭찬합시다</a>ㅣ <a href="#">자유게시판</a></span>
+    </div>
+    <ul>
+      <li>칭찬합시다 이용 안내입니다.</li>
+      <li>ㅇㅇㅇ</li>
+      <li>ㅇㅇㅇㅇ</li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div> -->

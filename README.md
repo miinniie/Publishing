@@ -115,14 +115,14 @@ GitHub supports emoji!
     }
     ```
   - 3.flex 이용
-  ```
-  .parent{
-    display: flex;
-  }
-  .siblings{
-    flex:1;
-  }
-  ```
+    ```
+    .parent{
+      display: flex;
+    }
+    .siblings{
+      flex:1;
+    }
+    ```
 <br>
 
 - 수직 중앙 배치
