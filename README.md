@@ -1,4 +1,3 @@
-GitHub supports emoji! 
 # Publishing
 
 ## HTML Tag (inline vs block)
