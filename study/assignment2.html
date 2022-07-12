@@ -9,110 +9,274 @@
 
   body {padding: 30px;}
   * {margin: 0;padding: 0; font-size: 14px; line-height: 1.4; color: black;}
-  ul, ol, li {list-style: none;}
+  ul, ol, li {list-style: none; margin-bottom: 0.5rem; display: list-item;}
 
-  .box                                                  {position:relative; width: 400px; height: 200px; padding: 10px; border: 1px solid black;}
-  .box h4.boxTit                                        {font-size: 16px; font-weight: bold; float:left}
-  .box ul                                    {overflow: hidden; width: 100%;}
-  .box ul li a         {float: left; width: 300px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;} /* 너무 길면 점점점 표시.. */
-  .box ul li span      {float: right;}
-  .box ul.noticeWrop li.notice .bbsWrap a.more          {position: absolute; right: 10px; top: -25px;} 
+  .m-s-notice div.news, .m-s-notice div.notice, .m-s-notice div.notice2, .m-s-notice div.notice3 {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+  }
+  
+  .m-s-notice {
+    /* overflow: hidden; */
+    position:relative;
+    background-color: #fff;
+    border: 1px solid #e4e5eb;
+    border-radius: 10px;
+    width: 700px;
+  }
+  .m-s-notice div {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    padding: 20px;
+    vertical-align: top;
+    margin-top: 55px;
+    box-sizing: border-box;
+    z-index: 0;
+    width: 100%;
+    min-height: 200px;
+  }
+  .m-s-notice div.news.on {
+    position: relative;
+    /* z-index: 2; */
+  }
+
+  .box div {
+    position: absolute;
+  }
+
+  .m-s-notice div h3 {
+    position: absolute;
+    left: 0;
+    top: -56px;
+    margin: 0;
+    float: left;
+    width: 23%;
+    height: 55px;
+    line-height: 55px;
+    background: #f7f7f7;
+    color: #676767;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 1px solid #e4e5eb;
+    border-right: 1px solid #e4e5eb;
+  }
+  
+  .m-s-notice div.notice h3 {
+    left: 23%;
+  }
+  .m-s-notice div.notice2 h3 {
+    left: 46%;
+  }
+  .m-s-notice div.notice3 h3 {
+    left: 69%;
+  }
+
+  .m-s-notice div.on > ul {
+    display: block;
+  }
+
+  .m-s-notice div > ul, .m-s-notice div > .more{
+    display: none;
+  }
+
+  .m-s-notice div > ul > li {
+    color: #666;
+    white-space: nowrap;
+    width: 100%;
+    line-height: 1.63rem;
+    line-height: 26px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .m-s-notice div > ul > li a{
+    display: inline-block;
+    position: relative;
+    width: 70%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0.95rem;
+    color: #666;
+  }
+
+  .m-s-notice div > ul > li .date {
+    display: block;
+    float: right;
+    color: #999;
+    font-size: .875rem;
+  }
+
+  .m-s-notice div > ul > li a, .m-s-notice div > ul > li .date{
+    color: #333 !important;
+  }
+  
+  .m-s-notice div .more {
+    display: inline-block;
+    position: absolute;
+    top: -56px;
+    left: 92%;
+    width: 8%;
+    height: 55px;
+    line-height: 55px;
+    color: #676767;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 1px solid #e4e5eb;
+  }
+
+  .m-s-notice div .more::after {
+    content: "\f067";
+    font-family: "Font Awesome 5 Pro";
+    color: #888;
+    font-size: .875rem;
+    display: inline-block;
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.mobile-more {
+    display: none;
+    position: relative;
+    top: 0px;
+    left: 50%;
+    margin-left: -35px;
+    border: 1px solid #0050a3;
+    border-radius: 30px;
+    padding: 0px 10px;
+}
 
 </style>
 <body>
-  <section class="area">
-    <article class="box">
+  <section class="new_content_box mt-3">
+    <article class="m-s-notice">
 
-      <div class="firstTab">
-        <h3>TAB-1</h3>
+      <div class="news on">
+        <h3 tabindex="0" class="tab">보도자료</h3>
         <ul>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
+            <a href="#" target="_blank">경기도 코로나19 현황(7.12. 10시)</a>
             <span class="date">2022.07.11</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목2</a>
+            <a href="#" target="_blank">아프리카돼지열병(ASF) 방역대책추진현황 220712 0시 기준</a>
             <span class="date">2022.07.11</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목3</a>
+            <a href="#" target="_blank">월 10만 원씩 저축하면 10만 원 추가 지원. 도, ‘장애인 누림통장’ 모집.   2년 만기시 약 500만 원 마련 가능</a>
             <span class="date">2022.07.11</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목4</a>
+            <a href="#" target="_blank">경기도, ‘지역아동센터 보조금 빼돌린 센터장’ 등 공익제보자 7명에 1,020만 원 지급</a>
+            <span class="date">2022.07.11</span>
+          </li>
+          <li>
+            <a href="#" target="_blank">국내여행객, 지난해 경기도 5천340만회 방문. 3년 연속 전국 최다</a>
             <span class="date">2022.07.11</span>
           </li>
         </ul>
-        <a href="#" class="more">더보기+</a>
+        <a class="more" href="#" target="_blank"><span class="sr-only">더보기</span></a>
+        <a class"mobile-more" href="#">더보기+</a> 
       </div>
 
-      <div class="SecondTab">
-        <h3>TAB-1</h3>
+      <div class="notice">
+        <h3 tabindex="0" class="tab">최신소식</h3>
         <ul>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">2022년 7월은 재산세(주택1/2, 건축물) 납부의 달입니다.</a>
+            <span class="date">2022.07.12</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">맑은숨터 지역아동센터(초등저학년) 대상 찾아가는 환경성질환 예방관리 교육 안내</a>
+            <span class="date">2022.07.12</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">국가 긴급복지 및 경기도형 긴급복지 신청 안내</a>
+            <span class="date">2022.07.12</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">경기도 공정R&D 과제관리시스템(G-PMS) 개발 민간위탁(공기관 포함) 성과평가 결과</a>
+            <span class="date">2022.07.12</span>
+          </li>
+          <li>
+            <a href="#" target="_blank">고양창릉S1, S4블록(사전청약) 특별공급 신청 안내(다문화가족)</a>
+            <span class="date">2022.07.12</span>
           </li>
         </ul>
-        <a href="#" class="more">더보기+</a>
+        <a class="more" href="#" target="_blank"><span class="sr-only">더보기</span></a>
+        <a class"mobile-more" href="#">더보기+</a> 
       </div>
 
-      <div class="ThirdTab">
-        <h3>TAB-1</h3>
+      <div class="notice2">
+        <h3 tabindex="0" class="tab">계약입찰</h3>
         <ul>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">2021년 가평소방서 본서 노후 공조설비 교체 건의 (다수공급자계약 2단계 경쟁)</a>
+            <span class="date">2022.07.12</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">(구갈) 시스템 냉난방기 설치공사 견적조사 결과 보고 및 계약 건의</a>
+            <span class="date">2022.07.12</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">청사 본관 화장실 이동형 냉방기 조달 구입 건의</a>
+            <span class="date">2022.07.12</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">이동탱크(89더7171) 뒤타이어 8개 교환 건의</a>
+            <span class="date">2022.07.12</span>
+          </li>
+          <li>
+            <a href="#" target="_blank">혈청검사 및 병성감정 진단키트(돼지열병) 구입 건의(조달 2차)</a>
+            <span class="date">2022.07.12</span>
           </li>
         </ul>
-        <a href="#" class="more">더보기+</a>
+        <a class="more" href="#" target="_blank"><span class="sr-only">더보기</span></a>
+        <a class"mobile-more" href="#">더보기+</a> 
       </div>
 
-      <div class="ForthTab">
-        <h3>TAB-1</h3>
+      <div class="notice3">
+        <h3 tabindex="0" class="tab">고시공고</h3>
         <ul>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">2022년 경기도 바이오기업 소재개발 실증연구 지원기업(과제) 선정결과 공고</a>
+            <span class="date">2022.07.12</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">「건설산업기본법」 위반업체 행정처분(영업정지) 변경 공고</a>
+            <span class="date">2022.07.12</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">「건설산업기본법」 위반 종합건설업체 행정처분(과징금부과) 공고</a>
+            <span class="date">2022.07.12</span>
           </li>
           <li>
-            <a href="#">글에 대한 간단한 제목1</a>
-            <span class="date">2022.07.11</span>
+            <a href="#" target="_blank">말 정액검사용 현미경 및 영상장비 구입(재공고)</a>
+            <span class="date">2022.07.12</span>
+          </li>
+          <li>
+            <a href="#" target="_blank">경기도북부동물위생시험소 공무직원 채용시험 서류전형 합격자 발표 및 면접시행 계획 공고</a>
+            <span class="date">2022.07.12</span>
           </li>
         </ul>
-        <a href="#" class="more">더보기+</a>
+        <a class="more" href="#" target="_blank"><span class="sr-only">더보기</span></a>
+        <a class"mobile-more" href="#">더보기+</a> 
       </div>
 
     </article>
@@ -124,3 +288,6 @@
   
 
 </script>
+
+<!-- css 구성 방법 -->
+<!-- 더보기 + 의 after tag 단 이유 -->
