@@ -5,13 +5,14 @@
   <link rel="stylesheet" href="style.css">
   <title>assignment2</title>
 </head>
-<style>
+<script type="text/javascript" src="../study/gg/common/js/jquery.js"></script>
 
+<!-- 1.TAB -->
+<style>
   body {padding: 30px;}
   * {margin: 0;padding: 0; font-size: 14px; line-height: 1.4; color: black;}
-  ul, ol, li {list-style: none; margin-bottom: 0.5rem; display: list-item;}
+  ul, ol, li a {list-style: none; margin-bottom: 0.5rem; display: list-item; text-decoration: none}
 
-/* 공지사항 */
 .m-s-notice { 
     overflow: hidden; 
     position: relative; 
@@ -145,19 +146,6 @@
     left:69%; 
 }
 
-@media (min-width: 768px) {
-    .m-s-notice div > ul > li a {
-        width: 80%;
-    }
-}
-
-@media (max-width: 768px) {
-    .m-s-notice div h3,
-    .m-s-notice div .more { 
-        font-size:1rem;
-    }
-}
-
 </style>
 <body>
   <section class="new_content_box mt-3">
@@ -277,13 +265,210 @@
 
     </article>
   </section>
+
+<!-- 2.TAB -->
+<style>
+  body {
+    font-family: BatangChe;
+    line-height: 1.6
+  }
+
+  .container {
+    margin-top: 50px;
+    overflow: hidden; 
+    position: relative; 
+    background-color:#fff;
+    border: 1px solid #e4e5eb;
+    border-radius: 10px;
+  }
+
+  ul.tabs{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+  }
+
+  ul.tabs li{
+    color: #222;
+    padding: 10px 15px;
+    cursor: pointer;
+    background: #f7f7f7;
+    float: left;
+    width: 25%;
+    height:33px;
+    line-height: 33px;
+    background: #f7f7f7;
+    color:#676767;
+    font-size:1.2rem; 
+    font-weight:300;
+    text-align: center;
+    cursor:pointer;
+    border-bottom: 1px solid #e4e5eb;
+    border-right: 1px solid #e4e5eb;
+    margin-bottom: 10px;
+  }
+
+  ul.tabs li.current{
+    background: #fff;
+    color: #0d73bd;
+  }
+
+  .tab-content{
+    display: none;
+    background: #fff;
+    padding: 15px;
+  }
+
+  .tab-content.current{
+    display: inherit;
+  }
+
+  div.tab-content ul li .date {
+    display: block;
+    float: right;
+    color: #999;
+    font-size: .875rem;
+  }
+
+  div.tab-content ul li a {
+    display: inline-block;
+    position: relative;
+    width:70%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0.95rem;
+    color: #666;
+  }
+
+</style>
+
+  <div class="container">
+
+    <ul class="tabs">
+      <li class="tab-link current" data-tab="tab-1">보도자료</li>
+      <li class="tab-link" data-tab="tab-2">최신소식</li>
+      <li class="tab-link" data-tab="tab-3">계약입찰</li>
+      <li class="tab-link" data-tab="tab-4">고시공고</li>
+    </ul>
+
+	<div id="tab-1" class="tab-content current">
+    <ul>
+      <li>
+        <a href="#" target="_blank">경기도 코로나19 현황(7.12. 10시)</a>
+        <span class="date">2022.07.11</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">아프리카돼지열병(ASF) 방역대책추진현황 220712 0시 기준</a>
+        <span class="date">2022.07.11</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">월 10만 원씩 저축하면 10만 원 추가 지원. 도, ‘장애인 누림통장’ 모집.   2년 만기시 약 500만 원 마련 가능</a>
+        <span class="date">2022.07.11</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">경기도, ‘지역아동센터 보조금 빼돌린 센터장’ 등 공익제보자 7명에 1,020만 원 지급</a>
+        <span class="date">2022.07.11</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">국내여행객, 지난해 경기도 5천340만회 방문. 3년 연속 전국 최다</a>
+        <span class="date">2022.07.11</span>
+      </li>
+    </ul>
+  </div>
+
+	<div id="tab-2" class="tab-content">
+    <ul>
+      <li>
+        <a href="#" target="_blank">2022년 7월은 재산세(주택1/2, 건축물) 납부의 달입니다.</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">맑은숨터 지역아동센터(초등저학년) 대상 찾아가는 환경성질환 예방관리 교육 안내</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">국가 긴급복지 및 경기도형 긴급복지 신청 안내</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">경기도 공정R&D 과제관리시스템(G-PMS) 개발 민간위탁(공기관 포함) 성과평가 결과</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">고양창릉S1, S4블록(사전청약) 특별공급 신청 안내(다문화가족)</a>
+        <span class="date">2022.07.12</span>
+      </li>
+    </ul>
+  </div>
+
+	<div id="tab-3" class="tab-content">
+    <ul>
+      <li>
+        <a href="#" target="_blank">2021년 가평소방서 본서 노후 공조설비 교체 건의 (다수공급자계약 2단계 경쟁)</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">(구갈) 시스템 냉난방기 설치공사 견적조사 결과 보고 및 계약 건의</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">청사 본관 화장실 이동형 냉방기 조달 구입 건의</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">이동탱크(89더7171) 뒤타이어 8개 교환 건의</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">혈청검사 및 병성감정 진단키트(돼지열병) 구입 건의(조달 2차)</a>
+        <span class="date">2022.07.12</span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="tab-4" class="tab-content">
+    <ul>
+      <li>
+        <a href="#" target="_blank">2022년 경기도 바이오기업 소재개발 실증연구 지원기업(과제) 선정결과 공고</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">「건설산업기본법」 위반업체 행정처분(영업정지) 변경 공고</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">「건설산업기본법」 위반 종합건설업체 행정처분(과징금부과) 공고</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">말 정액검사용 현미경 및 영상장비 구입(재공고)</a>
+        <span class="date">2022.07.12</span>
+      </li>
+      <li>
+        <a href="#" target="_blank">경기도북부동물위생시험소 공무직원 채용시험 서류전형 합격자 발표 및 면접시행 계획 공고</a>
+        <span class="date">2022.07.12</span>
+      </li>
+    </ul>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('ul.tabs li').click(function(){
+        var tab_id = $(this).attr('data-tab');
+  
+        $('ul.tabs li').removeClass('current');
+        $('.tab-content').removeClass('current');
+  
+        $(this).addClass('current');
+        $("#"+tab_id).addClass('current');
+      });
+    });
+  </script>
+
 </body>
 </html>
-
-<script type="text/javascript" src="../study/gg/common/js/jquuery.js">
-  
-
-</script>
 
 <!-- css 구성 방법 -->
 <!-- 더보기 + 의 after tag 단 이유 -->
