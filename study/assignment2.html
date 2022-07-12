@@ -11,112 +11,97 @@
   * {margin: 0;padding: 0; font-size: 14px; line-height: 1.4; color: black;}
   ul, ol, li {list-style: none; margin-bottom: 0.5rem; display: list-item;}
 
-  .m-s-notice div.news, .m-s-notice div.notice, .m-s-notice div.notice2, .m-s-notice div.notice3 {
-    position: absolute;
-    z-index: 0;
-    left: 0;
-    top: 0;
-  }
-  
-  .m-s-notice {
-    /* overflow: hidden; */
-    position:relative;
-    background-color: #fff;
+/* 공지사항 */
+.m-s-notice { 
+    overflow: hidden; 
+    position: relative; 
+    background-color:#fff;
     border: 1px solid #e4e5eb;
     border-radius: 10px;
-    width: 700px;
-  }
-  .m-s-notice div {
-    position: relative;
-    display: inline-block;
-    font-size: 14px;
-    padding: 20px;
-    vertical-align: top;
-    margin-top: 55px;
-    box-sizing: border-box;
-    z-index: 0;
+}
+.m-s-notice div { 
+    position:relative; 
+    display:inline-block; 
+    font-size:14px; 
+    padding:20px; 
+    vertical-align:top; 
+    margin-top:55px; 
+    box-sizing:border-box; 
+    z-index:0;     
     width: 100%;
-    min-height: 200px;
-  }
-  .m-s-notice div.news.on {
-    position: relative;
-    /* z-index: 2; */
-  }
-
-  .box div {
-    position: absolute;
-  }
-
-  .m-s-notice div h3 {
-    position: absolute;
-    left: 0;
-    top: -56px;
+    min-height:200px;
+}
+.m-s-notice div h3 { 
+    position:absolute; 
+    left:0; 
+    top:-56px; 
     margin: 0;
     float: left;
     width: 23%;
-    height: 55px;
+    height:55px;
     line-height: 55px;
     background: #f7f7f7;
-    color: #676767;
-    font-size: 1.2rem;
-    font-weight: 300;
+    color:#676767;
+    font-size:1.2rem; 
+    font-weight:300;
     text-align: center;
-    cursor: pointer;
+    cursor:pointer;
     border-bottom: 1px solid #e4e5eb;
     border-right: 1px solid #e4e5eb;
-  }
-  
-  .m-s-notice div.notice h3 {
-    left: 23%;
-  }
-  .m-s-notice div.notice2 h3 {
-    left: 46%;
-  }
-  .m-s-notice div.notice3 h3 {
-    left: 69%;
-  }
-
-  .m-s-notice div.on > ul {
-    display: block;
-  }
-
-  .m-s-notice div > ul, .m-s-notice div > .more{
-    display: none;
-  }
-
-  .m-s-notice div > ul > li {
-    color: #666;
-    white-space: nowrap;
-    width: 100%;
+}
+.m-s-notice div > ul,
+.m-s-notice div > .more { 
+    display:none; 
+}
+.m-s-notice div.on { 
+    z-index:2 
+}
+.m-s-notice div.on h3.tab {     
+    color: #0d73bd;
+    background: #fff;
+}
+.m-s-notice div.on > ul { 
+    display:block; 
+} 
+.m-s-notice div > ul > li {
+    color:#666; 
+    white-space:nowrap; 
+    width:100%; 
     line-height: 1.63rem;
     line-height: 26px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  .m-s-notice div > ul > li a{
+    text-overflow:ellipsis; 
+    overflow:hidden; 
+}
+.m-s-notice div > ul > li a {
     display: inline-block;
     position: relative;
-    width: 70%;
+    width:70%;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     font-size: 0.95rem;
     color: #666;
-  }
-
-  .m-s-notice div > ul > li .date {
+}
+.m-s-notice div > ul > li .date {
     display: block;
     float: right;
     color: #999;
     font-size: .875rem;
-  }
-
-  .m-s-notice div > ul > li a, .m-s-notice div > ul > li .date{
-    color: #333 !important;
-  }
-  
-  .m-s-notice div .more {
+}
+.m-s-notice div.news,
+.m-s-notice div.notice,
+.m-s-notice div.notice2,
+.m-s-notice div.notice3{ 
+    position: absolute; 
+    z-index: 0; 
+    left: 0; 
+    top: 0; 
+}
+.m-s-notice div.news.on { 
+    position: relative;
+    z-index:2;
+}
+.m-s-notice div .more {
     display: inline-block;
     position: absolute;
     top: -56px;
@@ -130,9 +115,9 @@
     text-align: center;
     cursor: pointer;
     border-bottom: 1px solid #e4e5eb;
-  }
+}
 
-  .m-s-notice div .more::after {
+.m-s-notice div .more:after {
     content: "\f067";
     font-family: "Font Awesome 5 Pro";
     color: #888;
@@ -140,26 +125,37 @@
     display: inline-block;
 }
 
-.sr-only {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+.m-s-notice div.notice.on,
+.m-s-notice div.notice2.on,
+.m-s-notice div.notice3.on{
+    position:relative; 
+    left:0; 
+    top:0;
+    z-index:2 
+}
+.m-s-notice div.notice h3 { 
+    left:23%;
 }
 
-.mobile-more {
-    display: none;
-    position: relative;
-    top: 0px;
-    left: 50%;
-    margin-left: -35px;
-    border: 1px solid #0050a3;
-    border-radius: 30px;
-    padding: 0px 10px;
+.m-s-notice div.notice2 h3 { 
+    left:46%; 
+}
+
+.m-s-notice div.notice3 h3 { 
+    left:69%; 
+}
+
+@media (min-width: 768px) {
+    .m-s-notice div > ul > li a {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .m-s-notice div h3,
+    .m-s-notice div .more { 
+        font-size:1rem;
+    }
 }
 
 </style>
@@ -248,7 +244,7 @@
           </li>
         </ul>
         <a class="more" href="#" target="_blank"><span class="sr-only">더보기</span></a>
-        <a class"mobile-more" href="#">더보기+</a> 
+        <a class="mobile-more" href="#">더보기+</a> 
       </div>
 
       <div class="notice3">
@@ -276,7 +272,7 @@
           </li>
         </ul>
         <a class="more" href="#" target="_blank"><span class="sr-only">더보기</span></a>
-        <a class"mobile-more" href="#">더보기+</a> 
+        <a class="mobile-more" href="#">더보기+</a> 
       </div>
 
     </article>
