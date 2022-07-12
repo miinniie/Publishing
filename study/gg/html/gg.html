@@ -23,9 +23,11 @@ section   {width:1200px; margin:0 auto;  }
 
 
 .header     {height:130px}
-.header section     {position:relative; overflow: hidden;}
+.header section     {position:relative; }
+.header section::after     {content:""; display:block; clear: both; }
 .header h1.logo       {float:left; padding:40px 0 0; }
 .header .utils        {float:right; }
+<<<<<<< HEAD
 .header .utils ul.links      {float:left; overflow: hidden;}
 .header .utils ul.links li.menu      {float:left; }
 .header .utils ul.links li.menu a    {}
@@ -33,6 +35,26 @@ section   {width:1200px; margin:0 auto;  }
 .header .utils ul.links li.menu ul.langLayer li   {}
 .header .utils ul.links li.menu ul.langLayer li a {}
 
+=======
+/* 상단 유틸영역 */
+.header .utils ul.links      {float:left;  }
+.header .utils ul.links li.menu {float:left; margin-right:10px; }
+.header .utils ul.links li.menu > a {display:block; padding-left:0; }
+.header .utils ul.links li.menu > a span {display:inline-block; vertical-align: 0; }
+.header .utils ul.links li.s1 a {padding-left:20px; background: url(https://www.gg.go.kr/site/gg/common/assets/images/ico-ggc.png) no-repeat 0 50%; }
+.header .utils ul.links li.s2 a::before {content: "\f0e8"; vertical-align: 0; }
+.header .utils ul.links li.s3 a::before {content: "\f0e8"; vertical-align: 0; }
+.header .utils ul.links li.s4 a::before {content: "\f0e8"; vertical-align: 0; }
+.header .utils ul.links li.s5 a::before {content: "\f0e8"; vertical-align: 0; }
+.header .utils ul.links li.s6 {position:relative;}
+.header .utils ul.links li.s6 > a::before {content: "\f0e8"; vertical-align: 0; }
+.header .utils ul.links li.s6 ul.langLayer {position:absolute; width:100px; left:0; top:20px; border-radius:5px; box-shadow: 2px 5px 10px #ddd; padding:5px 0 10px; background: #333;  }
+.header .utils ul.links li.s6 ul.langLayer li {}
+.header .utils ul.links li.s6 ul.langLayer li a {display:block; padding:3px 0 3px 20px; color:#fff;  }
+.header .utils ul.links li.s6 ul.langLayer li a:hover,
+.header .utils ul.links li.s6 ul.langLayer li a:focus {background:#af841d}
+/* 상단 유틸 줌 */
+>>>>>>> e77921819a9678e8a6975e5b40368ae9d56e7307
 
 .header .gnbWrap      {position:absolute; right:0; top:40px; }
 
@@ -41,6 +63,7 @@ section   {width:1200px; margin:0 auto;  }
 <div class="wrpper">
   <div class="header">
     <section>
+<<<<<<< HEAD
 
 <style>
 .header .utils ul.links      {float:left; overflow: hidden;}
@@ -87,22 +110,53 @@ section   {width:1200px; margin:0 auto;  }
               <li><a href="#">English</a></li>
               <li><a href="#">English</a></li>
               <li><a href="#">English</a></li>
+=======
+<style>
+
+
+</style>
+
+      <h1 class="logo"><img src="../images/common/img-header-logo.jpg" alt=""></h1>
+      <div class="utils">
+        <ul class="links">
+          <li class="menu s1"><a href="#"><span>경기도의회</span></a></li>
+          <li class="menu s2"><a href="#"><span>조직도</span></a></li>
+          <li class="menu s3"><a href="#"><span>날씨</span></a></li>
+          <li class="menu s4"><a href="#"><span>대기정보</span></a></li>
+          <li class="menu s5"><a href="#"><span>공무원메일</span></a></li>
+          <li class="menu s6"><a href="#" id="header_language_layer_btn"><span>Language</span></a>
+            <ul class="langLayer" id="header_language_layer_cont" style="display:none;">
+              <li><a href="#">English1</a></li>
+              <li><a href="#">English2</a></li>
+              <li><a href="#">English3</a></li>
+              <li><a href="#">English4</a></li>
+>>>>>>> e77921819a9678e8a6975e5b40368ae9d56e7307
             </ul>
           </li>
         </ul>
 
 <style>
+<<<<<<< HEAD
   .header .utils span.fontZoom   {float:right;}
   .header .utils span.fontZoom button  {}
   .header .utils span.fontZoom button.up  {}
   .header .utils span.fontZoom button.down  {}
   .header .utils span.fontZoom span  {}
+=======
+
+.header .utils span.fontZoom   {float:right;}
+.header .utils span.fontZoom button   {display:inline-block; width:20px; height:20px; text-align: center; vertical-align: 0; line-height:16px; border:1px solid #111; }
+.header .utils span.fontZoom button em {display:block; margin-top:-2px;  }
+.header .utils span.fontZoom span   {display:inline-block; vertical-align: -2px; }
+.header .utils span.fontZoom button.up  {}
+.header .utils span.fontZoom button.down  {}
+>>>>>>> e77921819a9678e8a6975e5b40368ae9d56e7307
 
 </style>
         <span class="fontZoom">
-          <button class="up">+</button>
+          <button class="up"><em>+</em></button>
           <span>글자크기</span>
-          <button class="down">-</button>
+          <button class="down"><em>-</em></button>
         </span>
       </div>
       <div class="gnbWrap">
