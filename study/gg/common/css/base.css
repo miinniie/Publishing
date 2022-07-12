@@ -124,3 +124,21 @@ hr.solid {display:block; height:1px; margin:10px 0; border:none;background:#d8d8
 @media print {
 .noprint {display:none; }
 }
+
+
+
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 300;
+  font-display: auto;
+  src: url("https://www.gg.go.kr/site/gg/common/assets/vendor/fontawesome/webfonts/fa-light-300.eot");
+  src: url("https://www.gg.go.kr/site/gg/common/assets/vendor/fontawesome/webfonts/fa-light-300.eot?#iefix") format("embedded-opentype"), 
+  url("https://www.gg.go.kr/site/gg/common/assets/vendor/fontawesome/webfonts/fa-light-300.woff2") format("woff2"), 
+  url("https://www.gg.go.kr/site/gg/common/assets/vendor/fontawesome/webfonts/fa-light-300.woff") format("woff"), 
+  url("https://www.gg.go.kr/site/gg/common/assets/vendor/fontawesome/webfonts/fa-light-300.ttf") format("truetype"), 
+  url("https://www.gg.go.kr/site/gg/common/assets/vendor/fontawesome/webfonts/fa-light-300.svg#fontawesome") format("svg");
+}
+
+
