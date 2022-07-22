@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Assignment4</title>
+</head>
+
+<style>
+  html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* outline: 0; */
+    font-size: 14px;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: 'Nanum Gothic';
+    font-weight: 400;
+    color: #222;
+    font-style: normal;
+    line-height: 1.35em;
+  }
+  h1, h2, h3, h4, h5, h6 { font-weight: 700;}
+  
+  div {display: block;}
+  ul {display: block;list-style-type: disc;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;padding-inline-start: 40px;}
+  li {display: list-item; text-align: -webkit-match-parent;}
+  a {margin: 0;padding: 0;font-size: 100%;vertical-align: baseline;background: transparent;text-decoration: none;color: #222;}
+  figure {display: block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 40px;margin-inline-end: 40px;}
+  img {vertical-align: top;}
+  
+
+  .inner1 {height: 350px; overflow: hidden;}
+  .inner1 .slide {width: 770px; float: left; position: relative;}
+
+  .sr-only {position: absolute; width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
+  .inner1 .slide_content {margin-left: 80px;}
+  .inner1 .slide_content h3 {position: absolute;top: 0;left: 0; width: 80px;height: 175px;}
+  .inner1 .slide_content h3 a {position: relative;display: block;width: 100%;height: 100%;padding-top: 50px;background-color: #d2e1e9;color: #333;font-weight: 600;text-align: center;box-sizing: border-box;}
+  .inner1 .slide_content h3 a.on { background-color: #0158a8; color: #fff; }
+  .inner1 .slide_content h3 a.on:after {content: " ";position: absolute;z-index: 10;left: 99%;top: 50%;width: 0;height: 0;border-style: solid;border-width: 25px 0 25px 32px;border-color: transparent transparent transparent #0158a8;margin-top: -25px;}
+  .inner1 .slide_content h3 a .ico_main {display: block;width: 50px;height: 50px;margin: 0 auto 10px;background-color: #fff;background-position: 0 0;border-radius: 50%;}
+  .ico_main {display: inline-block;background: url(./img/icon_main_2019.png) no-repeat 0 0;}
+  
+  .hotissue_banner .hi_wrapper .bx-wrapper, .hotissue_banner .ci_wrapper .bx-wrapper {margin-bottom: 0;border: 0; box-shadow: none;}
+  .hotissue_banner .hi_wrapper, .hotissue_banner .ci_wrapper {position: relative; display: block; overflow: hidden; }
+  .hotissue_banner .hi_control, .hotissue_banner .ci_control {position: absolute;display: block;right: 3px;bottom: 4px;width: 110px;height: 32px;border-radius: 16px;box-sizing: border-box;z-index: 11;}
+  .hotissue_banner .hi_control:before, .hotissue_banner .ci_control:before {content: '';position: absolute;top: 4px;right: 66px;width: 1px;height: 24px;background: rgba(255,255,255,.5);}
+
+  .hotissue_banner .hi_control .hi_pagers, .hotissue_banner .ci_control .ci_pagers {
+    position: absolute;
+    display: block;
+    right: 80px;
+    top: 50%;
+    width: auto;
+    color: #fff;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    overflow: hidden;
+    text-align: right;
+  }
+  .hotissue_banner .hi_control .hi_pagers > span, .hotissue_banner .ci_control .ci_pagers > span {
+      color: #fff;
+      letter-spacing: 0;
+      font-size: 13px;
+  }
+  .hotissue_banner .btn_hi_prev, .hotissue_banner .btn_ci_prev {
+    left: 49px;
+    background-image: url(./img/icon_set_common_2019.png);
+    background-position: -241px -285px;
+  }
+  .hotissue_banner .btn_hi > a, .hotissue_banner .btn_ci > a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+}
+.hotissue_banner .btn_hi > a, .hotissue_banner .btn_ci > a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+}
+
+.hotissue_banner .hi_control .hi_play, .hotissue_banner .ci_control .ci_play {
+    position: absolute;
+    display: block;
+    right: 21px;
+    top: calc(50% + 1px);
+    width: 18px;
+    height: 18px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    overflow: hidden;
+}
+.hotissue_banner .hi_control .hi_play > .btn_hi_start, .hotissue_banner .ci_control .ci_play > .btn_ci_start {
+    display: none;
+    background: url(./img/main/icon_set_common_2019.png) no-repeat -269px -285px;
+}
+.hotissue_banner .hi_control .hi_play > a, .hotissue_banner .ci_control .ci_play > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.hotissue_banner .hi_control .hi_play > .btn_hi_stop, .hotissue_banner .ci_control .ci_play > .btn_ci_stop {
+    background: url(./img/icon_set_common_2019.png) no-repeat -285px -285px;
+}
+.hotissue_banner .hi_control .hi_play > a, .hotissue_banner .ci_control .ci_play > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.hotissue_banner .btn_hi_next, .hotissue_banner .btn_ci_next {
+    right: 2px;
+    background-image: url(./img/icon_set_common_2019.png);
+    background-position: -256px -285px;
+}
+.hotissue_banner .btn_hi, .hotissue_banner .btn_ci {
+    position: absolute;
+    top: calc(50% + 1px);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    z-index: 10;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+}
+.hotissue_banner .btn_hi > a, .hotissue_banner .btn_ci > a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+}
+
+  .hotissue_banner {position: relative;display: block;box-sizing: border-box;overflow: hidden; height: 350px;}
+  .hotissue_banner .hi_slide li > a, .hotissue_banner .ci_slide li > a {display: block;width: 100%;height: 100%;box-sizing: border-box;}
+  .bx-viewport {-webkit-transform: translatez(0);}
+  .bx-wrapper img {max-width: 100%;display: block;}
+  .figcaption, .caption-area {position: absolute;left: 0;bottom: 0px;width: 100%;height: 40px;line-height: 40px;padding-left: 10px;padding-right: 122px;background-color: rgba(0,0,0,.7);color: #fff;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;box-sizing: border-box;}
+
+  .inner1 .slide_content {margin-left: 80px;}
+  .inner1 .slide_content2 h3 {top: 176px;}
+  .inner1 .slide_content h3 a {position: relative;display: block;width: 100%;height: 100%;padding-top: 50px;background-color: #d2e1e9;color: #333;font-weight: 600;text-align: center;box-sizing: border-box;}
+  .inner1 .slide_content h3 a.on {background-color: #0158a8; color: #fff;}
+  .inner1 .slide_content h3 a.on:after {content: " ";position: absolute;z-index: 10;left: 99%;top: 50%;width: 0;height: 0;border-style: solid;border-width: 25px 0 25px 32px;border-color: transparent transparent transparent #0158a8;margin-top: -25px;}
+
+  .inner1 .slide_content h3 a .ico_main_citizen {background-position: -50px 0px;}
+
+
+</style>
+<body>
+  <div class="inner1">
+    <div class="slide">
+      <h2 class="sr-only">슬라이드 영역</h2>
+      <!-- 주요뉴스 -->
+      <div class="slide_content slide_content1" style="margin-top: 0px;">
+        <h3><a href="#slide1" class="on"><i class="ico_main ico_main_news"></i>주요뉴스<em class="sr-only">선택됨</em></a></h3>
+        <div class="hotissue_banner" id="slide1" style="visibility: visible; opacity: 1; display: block;">
+          <div class="hi_wrapper">
+            <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 350px;"><ul class="hi_slide" style="width: 6215%; position: relative; transition-duration: 0.5s; transform: translate3d(-3450px, 0px, 0px);"><li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;" class="bx-clone">
+                <a href="https://mediahub.seoul.go.kr/archives/2004540" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3913');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/f98ef4c6b09a42bb8f723c0ef244a6ce.jpg" alt="폐업 후 재창업 소상공인에 '고용장려금 150만원' 지원">
+                    <figcaption class="figcaption">폐업 후 재창업 소상공인에 '고용장려금 150만원' 지원</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="https://mediahub.seoul.go.kr/archives/2005100" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3965');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/338f3e5bce8d41d59782ea8247aa4122.jpg" alt="광화문광장, 녹지 품고 두 배 넓어졌다…8월 6일 재개장">
+                    <figcaption class="figcaption">광화문광장, 녹지 품고 두 배 넓어졌다…8월 6일 재개장</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="https://mediahub.seoul.go.kr/archives/2004882" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3944');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/432d6e490b4d4e66bd6e59d7138a2f86.jpg" alt="임산부 교통비 70만원 지원…버스·택시는 물론 유류비까지">
+                    <figcaption class="figcaption">임산부 교통비 70만원 지원…버스·택시는 물론 유류비까지</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="false" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="https://mediahub.seoul.go.kr/archives/2004712" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3931');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/90f5b8fc17f049da84ce001dc81af47e.jpg" alt="떼일 걱정 마세요! 청년 '전세보증금 반환보증료' 전액 지원">
+                    <figcaption class="figcaption">떼일 걱정 마세요! 청년 '전세보증금 반환보증료' 전액 지원</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="https://mediahub.seoul.go.kr/archives/2004540" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3913');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/f98ef4c6b09a42bb8f723c0ef244a6ce.jpg" alt="폐업 후 재창업 소상공인에 '고용장려금 150만원' 지원">
+                    <figcaption class="figcaption">폐업 후 재창업 소상공인에 '고용장려금 150만원' 지원</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+            <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;" class="bx-clone">
+                <a href="https://mediahub.seoul.go.kr/archives/2005100" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle1','3965');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/338f3e5bce8d41d59782ea8247aa4122.jpg" alt="광화문광장, 녹지 품고 두 배 넓어졌다…8월 6일 재개장">
+                    <figcaption class="figcaption">광화문광장, 녹지 품고 두 배 넓어졌다…8월 6일 재개장</figcaption>
+                  </figure>
+                </a>
+              </li></ul></div><div class="bx-controls"></div></div>
+          </div>
+          <div class="hi_control">
+            <div class="hi_pagers">
+              <span class="index_count">5</span>/<span class="total_count">6</span>
+            </div>
+            <div class="btn_hi btn_hi_prev"><a class="bx-prev" href="#n">Prev</a></div>
+            <div class="hi_play">
+              <a href="#n" class="btn_hi_start" title="슬라이드 시작" style="display: none;">슬라이드 시작</a>
+              <a href="#n" class="btn_hi_stop" title="슬라이드 정지" style="display: block;">슬라이드 정지</a>
+            </div>
+            <div class="btn_hi btn_hi_next"><a class="bx-next" href="#n">Next</a></div>
+          </div>
+        </div>
+      </div>
+      <!-- // 주요뉴스 -->
+      <!-- 시민참여 -->
+      <div class="slide_content slide_content2">
+        <h3><a href="#slide2" class="on"><i class="ico_main ico_main_citizen"></i>시민참여<em class="sr-only">선택됨</em></a></h3>
+        <div class="hotissue_banner" id="slide2" style="visibility: visible; opacity: 1; display: block;">
+          <div class="ci_wrapper">
+            <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 350px;"><ul class="ci_slide" style="width: 10215%; position: relative; transition-duration: 0s; transform: translate3d(-690px, 0px, 0px);"><li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;" class="bx-clone">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3957');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/95efd3358f964c31a1f92ca247fd826e.jpg" alt=" 글로벌 스타트업 대축제 '트라이 에브리싱 2022' 밋업 참가 기업 모집 접수기간 2022.6.26~2022.9.16">
+                    <figcaption class="figcaption"> 글로벌 스타트업 대축제 '트라이 에브리싱 2022' 밋업 참가 기업 모집 접수기간 2022.6.26~2022.9.16</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="false" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3966');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/15c22d0c44ac45749aa75e19f5079246.jpg" alt="2022 서울특별시 안전상 수상후보자 추천 접수 접수기간 2022. 7. 20.(수) 09:00 ~ 8. 31.(수) 18:00">
+                    <figcaption class="figcaption">2022 서울특별시 안전상 수상후보자 추천 접수</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3964');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/3d10a7ca4b7c4946b993b83d4e15f1de.jpg" alt="2022 서울시 기획제안형 시민참여예산 제안 사업 공모">
+                    <figcaption class="figcaption">2022 서울시 기획제안형 시민참여예산 제안 사업 공모</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3963');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/0aca584a48ab49b39222f7a13c68c9f9.jpeg" alt="서울형 로컬 창업가 육성 프로그램 참여자 모집">
+                    <figcaption class="figcaption">서울형 로컬 창업가 육성 프로그램 참여자 모집</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3951');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/e2383fa8f79f4c9e8882a8d1a9da747f.jpg" alt="2022년 서울특별시 IoT도시데이터 활용 해커톤 대회 접수 기간 : ‘22. 7. 4.(월) 09:00 ~ 8. 5.(금) 23:59">
+                    <figcaption class="figcaption">2022년 서울특별시？IoT도시데이터 활용 해커톤 대회  접수 기간 : ‘22. 7. 4.(월) 09:00 ~ 8. 5.(금) 23:59</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3949');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/2253d72b2e3b4b3193e1f336e4f48102.jpg" alt="전기차 충전기 설치부지 신청 신청 대상 서울시 소재 충전기 설치를 희망하는 누구나(부지소유자 등) 신청 기간 2022. 6. 30.(목) ~ 상시 접수 신청 방법 온라인 신청 바로가기">
+                    <figcaption class="figcaption">전기차 충전기 설치부지 신청 - 신청 기간 2022. 6. 30.(목) ~ 상시 접수 </figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3955');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/9a5839e4809749c2aaa07e92b69f7bdf.png" alt="미래 청년 일자리 사업  참여자 2차 모집 신청기간 2022.7.13.(수) 09시~7.22.(금) 18시">
+                    <figcaption class="figcaption">미래 청년 일자리 사업  참여자 2차 모집 신청기간 2022.7.13.(수) 09시~7.22.(금) 18시</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3940');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/4c74c7b90c4146a5a393ca545d52817f.jpg" alt="오아시스 서울 프로젝트. 시민을 위한 도심 속 오아시스가 되어주세요. 신청기간 2022. 6. 22.(수) 9:00 ~ 8.31.(수) 18:00">
+                    <figcaption class="figcaption">오아시스 서울 프로젝트. 시민을 위한 도심 속 오아시스가 되어주세요.</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3941');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/a63f726c9aef4840aee2ecabc153106c.jpg" alt="포스트 코로나 시대, 서울시가 여러분의 일상 회복을 지원합니다.">
+                    <figcaption class="figcaption">포스트 코로나 시대, 서울시가 여러분의 일상 회복을 지원합니다.</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3935');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/d45bfdae60f34750ae9ace00d1c72288.jpg" alt="2022년 서울특별시 봉사상 수상후보자 추천 접수 ">
+                    <figcaption class="figcaption">2022년 서울특별시 봉사상 수상후보자 추천 접수</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+              <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3957');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/95efd3358f964c31a1f92ca247fd826e.jpg" alt=" 글로벌 스타트업 대축제 '트라이 에브리싱 2022' 밋업 참가 기업 모집 접수기간 2022.6.26~2022.9.16">
+                    <figcaption class="figcaption"> 글로벌 스타트업 대축제 '트라이 에브리싱 2022' 밋업 참가 기업 모집 접수기간 2022.6.26~2022.9.16</figcaption>
+                  </figure>
+                </a>
+              </li>
+              
+            <li aria-hidden="true" style="float: left; list-style: none; position: relative; width: 690px;" class="bx-clone">
+                <a href="#" target="_blank" title="새창으로 이동" onclick="fnMainHitClick('maintitle','3966');">
+                  <figure class="figure">
+                    <img width="690" height="350" src="./img/15c22d0c44ac45749aa75e19f5079246.jpg" alt="2022 서울특별시 안전상 수상후보자 추천 접수 접수기간 2022. 7. 20.(수) 09:00 ~ 8. 31.(수) 18:00">
+                    <figcaption class="figcaption">2022 서울특별시 안전상 수상후보자 추천 접수</figcaption>
+                  </figure>
+                </a>
+              </li></ul></div><div class="bx-controls"></div></div>
+          </div>
+          <div class="ci_control">
+            <div class="ci_pagers">
+              <span class="index_count">1</span>/<span class="total_count">10</span>
+            </div>
+            <div class="btn_ci btn_ci_prev"><a class="bx-prev" href="#n">Prev</a></div>
+            <div class="ci_play">
+              <a href="#n" class="btn_ci_start" title="슬라이드 시작" style="display: none;">슬라이드 시작</a>
+              <a href="#n" class="btn_ci_stop" title="슬라이드 정지" style="display: block;">슬라이드 정지</a>
+            </div>
+            <div class="btn_ci btn_ci_next"><a class="bx-next" href="#n">Next</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</html>
