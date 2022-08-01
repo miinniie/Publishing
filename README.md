@@ -151,4 +151,3 @@
       .img { background:url(./path) no-repeat 0 0 fixed; }
     </style>
     ```
-//test
