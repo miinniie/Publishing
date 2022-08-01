@@ -27,7 +27,7 @@
 - **상하** margin을 가질 수 <U>있음</U>   
 
 <br>
-  
+
 <hr/>
 
 <br>
@@ -146,8 +146,8 @@
 
 - parallax 사용방법
   - 이미지를 background에 삽입
-  ```
-  <style>
-    .img { background:url(./path) no-repeat 0 0 fixed; }
-  </style>
-  ```
+    ```
+    <style>
+      .img { background:url(./path) no-repeat 0 0 fixed; }
+    </style>
+    ```
