@@ -142,3 +142,12 @@
       height: 100vh;
     }
     ```
+<br>
+
+- parallax 사용방법
+  - 이미지를 background에 삽입
+  ```
+  <style>
+    .img { background:url(./path) no-repeat 0 0 fixed; }
+  </style>
+  ```
