@@ -1,0 +1,22 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <script>
+      $(function(){
+      	var list = $('li');
+      	var list_array = $.makeArray(list);
+      	list_array.reverse();
+      	$('ul').append(list_array);
+      });
+    </script>
+</head>
+<body>
+  <ul>
+  	<li>option1</li>
+  	<li>option2</li>
+  	<li>option3</li>
+  	<li>option4</li>
+  	<li>option5</li>
+  </ul>
+</body>
+</html>

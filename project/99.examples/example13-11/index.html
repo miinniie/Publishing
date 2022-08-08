@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+    var sum = 0;
+    $('p input').each(function(){
+        var grade = $(this).attr('name');
+        var num = $(this).attr('value');
+
+        if( grade == 'A' ) sum += 5;
+        else if( grade == 'B' ) sum += 4;
+        else if( grade == 'C' ) sum += 3;
+        else if( grade == 'D' ) sum += 2;
+        else if( grade == 'E' ) sum += 1;
+    });
+    $('input[name="result"]').attr('value', sum);
+});
+</script>
+</head>
+<body>
+<p>A등급 <input name="A" value="2" /></p>
+<p>B등급 <input name="B" value="1" /></p>
+<p>C등급 <input name="C" value="0" /></p>
+<p>D등급 <input name="D" value="0" /></p>
+<p>E등급 <input name="E" value="1" /></p>
+총점수 : <input name="result">
+</body>
+</html>

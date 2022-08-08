@@ -1,0 +1,22 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(function(){
+  $('input').change(function(e) { 
+    // 이메일 형식 검사용 정규표현식
+    var regex =  /^([0-9a-zA-Z_-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+    if(!regex.test($(this).val())) {
+        $('span').text('이메일 형식이 올바르지 않습니다.');
+    }
+    else {
+        $('span').text('올바른 형식입니다.');
+    }
+  });
+});
+</script>
+</head>
+<body>
+Email : <input type="text" size="30" value="" /> <span></span></body>
+</html>

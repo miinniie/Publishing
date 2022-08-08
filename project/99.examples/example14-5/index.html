@@ -1,0 +1,15 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(function(){
+  $('input').focus(function(e) { 
+    $(this).val('');
+  });
+});
+</script>
+</head>
+<body>
+<input type="text" size="30" value="검색어를 입력하세요." /> <input type="submit" value="검색" />
+</body>
+</html>

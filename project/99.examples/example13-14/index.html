@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(function(){
+        function init(){
+            var result1 = loading1();
+            $('#log').append(result1);
+
+            var result2 = loading2();
+            $('#log').append(result2);
+
+            var result3 = loading3();
+            $('#log').append(result3);
+
+            var finish = $('<p>all loading phase complete.</p>');
+            $('#log').append(finish);
+        }
+        function loading1(){
+            // loading phase 1
+            return "<p>loading1 complete!</p>";
+        }
+        function loading2(){
+            // loading phase 2
+            return "<p>loading2 complete!</p>";
+        }
+        function loading3(){
+            // loading phase 3
+            return "<p>loading3 complete!</p>";
+        }
+
+        init();
+    });
+</script>
+</head>
+<body>
+    <div id="log">Logs...</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<head>
+  <script>
+    var worker; 
+    
+    function startWorker() 
+    { 
+      if(typeof(Worker) !== "undefined") // Checking whether Web Workers are supported or not in the browser 
+      { 
+        if(worker == undefined) 
+        { 
+          worker = new Worker("webworker.js"); 
+        }
+       
+       worker.onmessage = receiveMessage ;   // Setting a meesage processing method 
+      } 
+      else 
+      { 
+        document.getElementById("result").innerHTML="Web Worker를 지원하지 않는 브라우저입니다."; 
+      } 
+    }
+     
+    function stopWorker() 
+    { 
+      worker.terminate(); // Terminating the worker 
+      worker = undefined ; 
+    }
+     
+    function receiveMessage(event) 
+    { 
+      document.getElementById("result").innerHTML = event.data; 
+    };
+  </script>
+</head>
+
+<body>
+  <div id="result"></div>
+  <button onclick="startWorker()">Web Worker 시작</button> 
+  <button onclick="stopWorker()">Web Worker 중지</button>
+</body>
+</html>

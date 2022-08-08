@@ -1,0 +1,21 @@
+<html>
+<head>
+  <style>
+    .card { float:left; width:50px; height:80px; border:2px solid #999; margin:5px; }
+    .selected { background:blue; }
+  </style>
+  <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+  <script>
+  $(function(){
+    $('.card').on('click', function(e){
+      $(this).toggleClass('selected');
+    });
+  });
+  </script>
+</head>
+<body>
+<div class="card"></div> <div class="card"></div>
+<div class="card"></div> <div class="card"></div>
+<div class="card"></div> <div class="card"></div>
+</body>
+</html>

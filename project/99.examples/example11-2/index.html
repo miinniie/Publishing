@@ -1,0 +1,89 @@
+<html>
+<head>
+  <script>
+    webdb = {};
+    webdb.open = function() {
+      var dbSize = 5 * 1024 * 1024; // 5MB
+      webdb.db = openDatabase('Memo', '1.0', 'memo', dbSize);
+    }
+    
+    webdb.onError = function(tx, e) {
+      alert('예기치 않은 오류가 발생하였습니다: ' + e.message );
+    }
+    
+    webdb.onSuccess = function(tx, r) {
+      refresh();
+    }
+    
+    webdb.createTable = function() {
+      webdb.db.transaction(function(tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS ' + 
+                      'memo(idx INTEGER PRIMARY KEY ASC, memo TEXT, created DATETIME)', []);
+      });
+    }
+    
+    webdb.addMemo = function(memodata) {
+      var created = new Date();
+      webdb.db.transaction(function(tx){
+        tx.executeSql('INSERT INTO memo(memo, created) VALUES (?,?)', 
+            [memodata, created], webdb.onSuccess, webdb.onError);
+        });
+    }
+    
+    webdb.getAllItems = function(renderFunc) {
+      webdb.db.transaction(function(tx) {
+        tx.executeSql('SELECT * FROM memo', [], renderFunc, webdb.onError);
+      });
+    }
+    
+    webdb.deleteItem = function(idx) {
+      webdb.db.transaction(function(tx) {
+        tx.executeSql('DELETE FROM memo WHERE idx=?', [idx], refresh, webdb.onError);
+      });
+    }
+    
+    function refresh() {
+      webdb.getAllItems(loadItems);
+    }
+    
+    function loadItems(tx, rs) {
+      var rowOutput = "";
+      for (var i=0; i < rs.rows.length; i++) {
+        rowOutput += render(rs.rows.item(i));
+      }
+      var memoItems = document.getElementById('memolist');
+      memoItems.innerHTML = rowOutput;
+    }
+    
+    function render(row) {
+      return '<li>' + row.idx + ':' + row.memo + ' [<a onclick="webdb.deleteItem(' + row.idx + ');">DEL</a>]</li>';
+    }
+    
+    function addMemo() {
+      var memo = document.getElementById("memo");
+      webdb.addMemo(memo.value);
+      memo.value = "";
+    }
+    
+    
+    function init() {
+      webdb.open();
+      webdb.createTable();
+      webdb.getAllItems(loadItems);
+    }
+  </script>
+</head>
+
+<body onload="init();">
+  <ul id="memolist">
+  </ul>
+  
+  <form> 
+    <input type="text" id="memo" name="memo" 
+      placeholder="메모 내용을 입력하세요." style="width: 200px;" /> 
+    <input type="button" value="입력하기" onclick="addMemo();" /> 
+  </form>
+  
+</body>
+
+</html>

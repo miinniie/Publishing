@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hello HTML</title>
+	<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+	
+	<style>
+		a {
+			text-decoration:none;
+		}
+		a:hover {
+			text-decoration:none;
+		}
+		
+		.small {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 12px;
+			font-weight:bold;
+			padding: 7px 12px;
+			cursor:pointer;	
+			line-height:16px;
+			margin:0 15px 30px 15px;
+			display:inline-block;
+		}
+		
+		.medium {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 14px;
+			font-weight:bold;
+			padding: 11px 15px;
+			cursor:pointer;	
+			line-height:18px;
+			margin:0 10px 20px 0;
+			display:inline-block;
+		}
+		
+		.big {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			font-weight:bold;
+			padding: 15px 20px;
+			cursor:pointer;	
+			line-height:20px;
+			margin:0 10px 20px 0;
+			display:inline-block;
+		}
+
+		.button {
+			border-radius: 2px;
+			-moz-border-radius: 2px;
+			-webkit-border-radius: 2px;	
+			behavior:url(PIE.htc);		
+			box-shadow: #e3e3e3 0 1px 1px;	
+			-moz-box-shadow:
+				0px 1px 1px rgba(000,000,000,0.1),
+				inset 0px 1px 1px rgba(255,255,255,0.7);
+			-webkit-box-shadow:
+				0px 1px 1px rgba(000,000,000,0.1),
+				inset 0px 1px 1px rgba(255,255,255,0.7);	
+			behavior:url(PIE.htc);				
+		}
+		
+		.blue {
+			text-shadow: 1px 1px 0px #b3e8f9;
+			color: #3c7389;
+			border: 1px solid #4bb6da;	
+			background: #5ccded; /*for non-CSS3 browsers*/
+			background: -webkit-gradient(linear, 0 0, 0 100%, from(#7ad6fc) to(#5ccded)); /*old webkit*/
+			background: -webkit-linear-gradient(#7ad6fc, #5ccded); /*new webkit*/
+			background: -moz-linear-gradient(#7ad6fc, #5ccded); /*gecko*/
+			background: -ms-linear-gradient(#7ad6fc, #5ccded); /*IE10*/
+			background: -o-linear-gradient(#7ad6fc, #5ccded); /*opera 11.10+*/
+			background: linear-gradient(#7ad6fc, #5ccded); /*future CSS3 browsers*/
+			-pie-background: linear-gradient(#7ad6fc, #5ccded); /*PIE*/
+			
+			
+		}
+		.blue:hover {
+			color: #3c7389;
+			border: 1px solid #4bb6da;	
+			background: #5ccded; /*for non-CSS3 browsers*/
+			background: -webkit-gradient(linear, 0 0, 0 100%, from(#5ccded) to(#7ad6fc)); /*old webkit*/
+			background: -webkit-linear-gradient(#5ccded, #7ad6fc); /*new webkit*/
+			background: -moz-linear-gradient(#5ccded, #7ad6fc); /*gecko*/
+			background: -ms-linear-gradient(#5ccded, #7ad6fc); /*IE10*/
+			background: -o-linear-gradient(#5ccded, #7ad6fc); /*opera 11.10+*/
+			background: linear-gradient(#5ccded, #7ad6fc); /*future CSS3 browsers*/
+			-pie-background: linear-gradient(#5ccded, #7ad6fc); /*PIE*/	
+		}
+		.blue-hover {
+			text-shadow: 1px 1px 0px #b3e8f9;
+			color: #3c7389;
+			border: 1px solid #4bb6da;	
+			background: #5ccded; /*for non-CSS3 browsers*/
+			background: -webkit-gradient(linear, 0 0, 0 100%, from(#5ccded) to(#7ad6fc)); /*old webkit*/
+			background: -webkit-linear-gradient(#5ccded, #7ad6fc); /*new webkit*/
+			background: -moz-linear-gradient(#5ccded, #7ad6fc); /*gecko*/
+			background: -ms-linear-gradient(#5ccded, #7ad6fc); /*IE10*/
+			background: -o-linear-gradient(#5ccded, #7ad6fc); /*opera 11.10+*/
+			background: linear-gradient(#5ccded, #7ad6fc); /*future CSS3 browsers*/
+			-pie-background: linear-gradient(#5ccded, #7ad6fc); /*PIE*/	
+		}
+
+
+	</style>
+  </head>
+  <body>
+    <a href="#" class="button small blue-hover">Button Text</a>
+	<a href="#" class="button medium blue-hover">Button Text</a>
+	<a href="#" class="button big blue-hover">Button Text</a>
+  </body>
+</html>

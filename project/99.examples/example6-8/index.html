@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hello HTML</title>
+	<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+	
+	<style>
+		a {
+			text-decoration:none;
+		}
+		a:hover {
+			text-decoration:none;
+		}
+		
+		.small {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 12px;
+			font-weight:bold;
+			padding: 7px 12px;
+			cursor:pointer;	
+			line-height:16px;
+			margin:0 15px 30px 15px;
+			display:inline-block;
+		}
+		
+		.medium {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 14px;
+			font-weight:bold;
+			padding: 11px 15px;
+			cursor:pointer;	
+			line-height:18px;
+			margin:0 10px 20px 0;
+			display:inline-block;
+		}
+		
+		.big {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			font-weight:bold;
+			padding: 15px 20px;
+			cursor:pointer;	
+			line-height:20px;
+			margin:0 10px 20px 0;
+			display:inline-block;
+		}
+
+		.button {
+			border-radius: 2px;
+			-moz-border-radius: 2px;
+			-webkit-border-radius: 2px;	
+			behavior:url(PIE.htc);		
+			box-shadow: #e3e3e3 0 1px 1px;	
+			-moz-box-shadow:
+				0px 1px 1px rgba(000,000,000,0.1),
+				inset 0px 1px 1px rgba(255,255,255,0.7);
+			-webkit-box-shadow:
+				0px 1px 1px rgba(000,000,000,0.1),
+				inset 0px 1px 1px rgba(255,255,255,0.7);	
+			behavior:url(PIE.htc);				
+		}
+		
+		.red {
+			text-shadow: 1px 1px 0px #ffb5b6;
+			color: #993333;
+			border: 1px solid #dc5653;	
+			background: #fe5d62; /*for non-CSS3 browsers*/
+			background: -webkit-gradient(linear, 0 0, 0 100%, from(#fe8781) to(#fe5d62)); /*old webkit*/
+			background: -webkit-linear-gradient(#fe8781, #fe5d62); /*new webkit*/
+			background: -moz-linear-gradient(#fe8781, #fe5d62); /*gecko*/
+			background: -ms-linear-gradient(#fe8781, #fe5d62); /*IE10*/
+			background: -o-linear-gradient(#fe8781, #fe5d62); /*opera 11.10+*/
+			background: linear-gradient(#fe8781, #fe5d62); /*future CSS3 browsers*/
+			-pie-background: linear-gradient(#fe8781, #fe5d62); /*PIE*/
+			
+			
+		}
+		.red:hover {
+			color: #993333;
+			border: 1px solid #dc5653;	
+			background: #fe5d62; /*for non-CSS3 browsers*/
+			background: -webkit-gradient(linear, 0 0, 0 100%, from(#fe5d62) to(#fe8781)); /*old webkit*/
+			background: -webkit-linear-gradient(#fe5d62, #fe8781); /*new webkit*/
+			background: -moz-linear-gradient(#fe5d62, #fe8781); /*gecko*/
+			background: -ms-linear-gradient(#fe5d62, #fe8781); /*IE10*/
+			background: -o-linear-gradient(#fe5d62, #fe8781); /*opera 11.10+*/
+			background: linear-gradient(#fe5d62, #fe8781); /*future CSS3 browsers*/
+			-pie-background: linear-gradient(#fe5d62, #fe8781); /*PIE*/	
+		}
+		.red-hover {
+			text-shadow: 1px 1px 0px #ffb5b6;
+			color: #993333;
+			border: 1px solid #dc5653;	
+			background: #fe5d62; /*for non-CSS3 browsers*/
+			background: -webkit-gradient(linear, 0 0, 0 100%, from(#fe5d62) to(#fe8781)); /*old webkit*/
+			background: -webkit-linear-gradient(#fe5d62, #fe8781); /*new webkit*/
+			background: -moz-linear-gradient(#fe5d62, #fe8781); /*gecko*/
+			background: -ms-linear-gradient(#fe5d62, #fe8781); /*IE10*/
+			background: -o-linear-gradient(#fe5d62, #fe8781); /*opera 11.10+*/
+			background: linear-gradient(#fe5d62, #fe8781); /*future CSS3 browsers*/
+			-pie-background: linear-gradient(#fe5d62, #fe8781); /*PIE*/	
+		}
+
+
+	</style>
+  </head>
+  <body>
+    <a href="#" class="button small red-hover">Button Text</a>
+	<a href="#" class="button medium red-hover">Button Text</a>
+	<a href="#" class="button big red-hover">Button Text</a>
+  </body>
+</html>

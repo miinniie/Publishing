@@ -1,0 +1,24 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script>
+   $(function(){
+       // 서브 메뉴가 있는 요소를 선택한다.
+       $('li').has('ul').prepend("▼");
+   });
+</script>
+</head>
+<body>
+<ul>
+  <li>Menu1</li>
+  <li>Menu2
+     <ul>
+       <li>Sub menu</li>
+       <li>Sub menu</li>
+     </ul>
+  </li>
+  <li>Menu3</li>
+  <li>Menu4</li>
+</ul>
+</body>
+</html>

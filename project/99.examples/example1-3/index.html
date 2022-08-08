@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+	    <title>Line Example</title>
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            #myCanvas {
+                border: 1px solid #9C9898;
+            }
+        </style>
+        <script>
+            
+          window.onload = function() {
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                
+                // blue line with round ends
+                context.beginPath();
+                context.moveTo(50, 50);
+                context.lineTo(300,50);
+                context.lineWidth = 10;
+                context.strokeStyle = "#0000FF"; 
+                context.lineCap = "round";
+                context.stroke();
+
+                // green line with square ends
+                context.beginPath();
+                context.moveTo(50, 100);
+                context.lineTo(300,100);
+                context.lineWidth = 20;
+                context.strokeStyle = "#00FF00"; 
+                context.lineCap = "square";
+                context.stroke();
+
+                // purple line with butt ends
+                context.beginPath();
+                context.moveTo(50, 150);
+                context.lineTo(300, 150);
+                context.lineWidth = 30;
+                context.strokeStyle = "#FF00FF"; 
+                context.lineCap = "butt";
+                context.stroke();
+            };
+        </script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="400" height="200">
+        </canvas>
+    </body>
+</html>

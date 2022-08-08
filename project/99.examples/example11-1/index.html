@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>html5-geolocation</title>
+<script>
+	function myLocation() {
+		navigator.geolocation.getCurrentPosition( successHandler );
+	}
+
+	function successHandler( position ) {
+		var latitude = position.coords.latitude; 
+		var longitude = position.coords.longitude; 
+ 
+		var loc = document.getElementById("location");
+ 
+		loc.innerHTML = "현재 위치는 위도 : "+latitude+"  ,경도: "+longitude;   
+	}
+	window.onload = myLocation;
+</script>
+</head>
+
+<body>
+	<p id="location">현재 위치는</p>
+</body>
+ 
+</html>

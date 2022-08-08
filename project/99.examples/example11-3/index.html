@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>IndexedDB</title>
+    <script type="text/javascript">
+      var db;
+      var request;
+      
+      window.onload = function () {
+          //웹 브라우저별로 Indexed DB 객체를 찾아서 결정한다.
+          window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+          
+          //Transaction 객체를 생성한다.
+          window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+          window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange
+          
+          if (!window.indexedDB) {
+              window.alert("당신의 브라우저는 IndexedDB를 지원하지 않습니다.")
+          }
+          
+          request = window.indexedDB.open("memoDB", 1);
+      
+          
+          request.onerror = function(event) {
+            console.log("예기치 않은 오류가 발생하였습니다.");
+          };
+          
+          request.onsuccess = function(event) {
+            db = request.result;
+            console.log("데이터베이스 연결에 성공하였습니다.: "+ db);
+      
+            readAll();
+          };  
+      
+          request.onupgradeneeded = function(event) {
+              var db = event.target.result;
+              var objectStore = db.createObjectStore("memodata", {keyPath: "idx", autoIncrement: true});
+          }
+      };
+
+      function readAll() {
+          var objectStore = db.transaction("memodata").objectStore("memodata");
+       
+          document.getElementById("memolist").innerHTML = "";
+  
+  
+          objectStore.openCursor().onsuccess = function(event) {
+            var cursor = event.target.result;
+            if (cursor) {
+              document.getElementById("memolist").innerHTML += "<li>" + cursor.value.idx + ":"+ cursor.value.memo + "[<a onclick='deleteItem(" + cursor.value.idx + ");'>DEL</a>]</li>";
+              cursor.continue();
+            }
+          };  
+      }
+      
+      function addMemo() {
+          var created = new Date();
+          var request = db.transaction(["memodata"], "readwrite").objectStore("memodata")
+                      .add({ memo: document.getElementById("memo").value, time: created });
+                      
+          request.onsuccess = function(event) {
+              alert("정상적으로 입력되었습니다.");
+              readAll();
+          };
+          
+          request.onerror = function(event) {
+              alert("예기치 않은 오류가 발생했습니다.");    
+          }
+      }
+      
+      function deleteItem(idx) {
+          var request = db.transaction(["memodata"], "readwrite")
+                      .objectStore("memodata")
+                      .delete(idx);
+  
+          request.onsuccess = function(event) {
+            console.log("해당 항목을 삭제했습니다.");
+            readAll();
+          };
+      }
+    </script>
+</head>
+<body>
+  <ul id="memolist">
+  </ul>
+  
+  <form> 
+    <input type="text" id="memo" name="memo" 
+      placeholder="메모 내용을 입력하세요." style="width: 200px;" /> 
+    <input type="button" value="입력하기" onclick="addMemo();" /> 
+  </form>  
+</body>
+</html>

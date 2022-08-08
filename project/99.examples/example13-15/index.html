@@ -1,0 +1,21 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(function(){
+        var m1 = "<p>첫번째 메시지</p>";
+        var m2 = "<p>두번째 메시지</p>";
+        var m3 = "<p>세번째 메시지</p>";
+        $('#messages').prepend(m1);
+        $('#messages').prepend(m2);
+        $('#messages').prepend(m3);
+    });
+</script>
+</head>
+<body>
+    <p>Recent messages</p>
+    <div id="messages">
+        <p>기존 메시지</p>
+    </div>
+</body>
+</html>

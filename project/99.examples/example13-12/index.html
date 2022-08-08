@@ -1,0 +1,21 @@
+<html>
+<head>
+<style>
+div { width: 100px; height: 100px; float:left; border: 1px solid; margin:10 }
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(function(){
+        $('div').click(function(){
+            $(this).css({"border":"3px solid red", "width":"+=20", "height":"+=20"});
+        });
+    });
+</script>
+</head>
+<body>
+<div>text1</div>
+<div>text2</div>
+<div>text3</div>
+<div>text4</div>
+</body>
+</html>

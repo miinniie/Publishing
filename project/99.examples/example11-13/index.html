@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HTML5 File Drag &amp; Drop API</title>
+<script src="filedrag.js"></script>
+
+<style>
+
+body
+{
+	font-family: "Segoe UI", Tahoma, Helvetica, freesans, sans-serif;
+	font-size: 90%;
+	margin: 10px;
+	color: #333;
+	background-color: #fff;
+}
+
+legend
+{
+	font-weight: bold;
+	color: #333;
+}
+
+#filedrag
+{
+	font-weight: bold;
+	text-align: center;
+	padding: 1em 0;
+	margin: 1em 0;
+	color: #555;
+	border: 3px dotted #555;
+	border-radius: 10px;
+	cursor: default;
+	height: 250px;
+}
+
+#filedrag.hover
+{
+	color: #00f;
+	border-color: #00f;
+	border-style: solid;
+}
+
+img
+{
+	max-width: 100%;
+}
+
+pre
+{
+	width: 95%;
+	height: 8em;
+	font-family: monospace;
+	font-size: 0.9em;
+	padding: 1px 2px;
+	margin: 0 0 1em auto;
+	border: 1px inset #666;
+	background-color: #eee;
+	overflow: auto;
+}
+
+#messages
+{
+	padding: 10px;
+	margin: 1em 0;
+	border: 1px solid #999;
+}
+</style>
+
+</head>
+<body>
+
+<form id="upload" action="" method="POST" enctype="multipart/form-data">
+
+<p>HTML5 File API and Drag and Drop</p>
+
+<div>
+	<div id="filedrag">Drop file here</div>
+</div>
+
+</form>
+
+<div id="messages">
+File Information
+</div>
+
+</body>
+</html>

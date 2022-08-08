@@ -1,0 +1,26 @@
+<html>	
+<head>
+<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script>
+    $(function(){
+        $('button').on('click', function(){
+            $(this).text('clicked');
+            $(this).attr('disabled',true);
+            $(window).trigger('btClicked');
+        });
+        
+        var count = 0;
+        $(window).on('btClicked', function(){
+            if(++count == 3) {
+                alert('finished');
+            }
+        });
+    });
+</script>
+</head>
+<body> 
+    <button>버튼1</button>
+    <button>버튼2</button>
+    <button>버튼3</button>
+</body>
+</html>
