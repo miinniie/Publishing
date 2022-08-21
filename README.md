@@ -142,12 +142,42 @@
       height: 100vh;
     }
     ```
+
+
+<br>
+***
 <br>
 
-- parallax 사용방법
+## CSS
+> #### 1.속성 빼먹지 말자! 
+- transform: positionX, positionY 에서 하나만 빼먹으면 0이 default
+    ```
+    <style>
+      .class { transform: positionX, positionY }
+    </style>
+    ```
+<br>
+
+> #### 2.알아두면 좋은 
+- easing: 시간에 따라 다르게 움직이는 애니메이션 (https://easing.net)
+  - 이미지를 background에 삽입
+    ```
+    <style>
+      .class { easing:; }
+    </style>
+    ```
+
+- parallax: 
   - 이미지를 background에 삽입
     ```
     <style>
       .img { background:url(./path) no-repeat 0 0 fixed; }
     </style>
+    ```
+
+
+> #### 3.기본 필승공식
+  - tab script
+    ```
+    tab.each()click(this.i=i) >> 
     ```
