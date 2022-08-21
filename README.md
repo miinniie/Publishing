@@ -158,14 +158,14 @@
     ```
 <br>
 
-> #### 2.알아두면 좋은 
-- easing: 시간에 따라 다르게 움직이는 애니메이션 (https://easing.net)
+> #### 2.알아두면 좋은 메이션 (https://easing.net)
   - 이미지를 background에 삽입
     ```
     <style>
       .class { easing:; }
     </style>
     ```
+- easing: 시간에 따라 다르게 움직이는 애니
 
 - parallax: 
   - 이미지를 background에 삽입
@@ -179,5 +179,5 @@
 > #### 3.기본 필승공식
   - tab script
     ```
-    tab.each()click(this.i=i) >> 
+    tab.each()click(this.i=i) >> each문 한번 돌고 자기 인덱스 넣어줌
     ```
