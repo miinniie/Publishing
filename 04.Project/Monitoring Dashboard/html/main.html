@@ -60,142 +60,166 @@
       <!-- main-panel -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">               
-            <div class="tab-content">
-              
-              <div class="row-1-col-1">
-                <div class="grid-margin">
-                  <div class="card card-rounded">
-                    <div class="card-body">
-                      <div class="card-title-flex">
-                        <h4 class="card-title">WTS</h4>
-                      </div>
-
-                      <div class="table-responsive">
-                        <table class="table select-table">
-                          <thead>
-                            <tr>
-                              <th>서버명</th>
-                              <th>상태</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>
-                                <h6>pwtsws01</h6>
-                                <p>172.30.210.31</p>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-danger btn-rounded btn-fw">
-                                  <h7>Jeus</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-rounded btn-fw">
-                                  <h7>File</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-success btn-rounded btn-fw">
-                                  <h7>L4</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-rounded btn-fw">
-                                  <h7>Jeus</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-rounded btn-fw">
-                                  <h7>File</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-success btn-rounded btn-fw">
-                                  <h7>L4</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <h6>pwtsws02</h6>
-                                <p>172.30.210.31</p>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-danger btn-rounded btn-fw">
-                                  <h7>Jeus</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-rounded btn-fw">
-                                  <h7>File</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-success btn-rounded btn-fw">
-                                  <h7>L4</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-rounded btn-fw">
-                                  <h7>Jeus</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-rounded btn-fw">
-                                  <h7>File</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-success btn-rounded btn-fw">
-                                  <h7>L4</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <h6>pwtsws03</h6>
-                                <p>172.30.210.31</p>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-danger btn-rounded btn-fw">
-                                  <h7>Jeus</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-rounded btn-fw">
-                                  <h7>File</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-success btn-rounded btn-fw">
-                                  <h7>L4</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-rounded btn-fw">
-                                  <h7>Jeus</h7>
-                                  <h7>HHMMSS</h7>
-                                  <h7>1/1</h7>
-                                </button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-
+          
+          <div class="row">
+            <div class="row-content">
+              <div class="item" id="row-1-col-1">
+                <div class="card card-rounded">
+                  <div class="card-body">
+                    <div class="card-title-flex">
+                      <h4 class="card-title">WTS</h4>
                     </div>
+
+                    <div class="card-content">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>서버명</th>
+                            <th>상태</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <h6>pwtsws01</h6>
+                              <p>172.30.210.31</p>
+                            </td>
+                            <td id="table-button">
+                              <button type="button" class="btn btn-danger btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-warning btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-danger btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-warning btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-danger btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-warning btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-warning btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <h6>pwtsws02</h6>
+                              <p>172.30.210.31</p>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-danger btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-warning btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-danger btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-warning btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <h6>pwtsws03</h6>
+                              <p>172.30.210.31</p>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-danger btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-warning btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-danger btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
                   </div>
-                </div>
+
+              </div>
               </div>
 
               <div class="row-1-col-1 d-flex">
-                <div class="grid-margin">
+
                   <div class="card card-rounded">
                     <div class="card-body">
                       <div class="card-title-flex">
@@ -322,7 +346,7 @@
 
                     </div>
                   </div>
-                </div>
+                  
               </div>
 
 
