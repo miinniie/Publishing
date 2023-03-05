@@ -18,40 +18,49 @@
 </head>
 
 <body>
-  <div class="container-scroller"> 
-    <!-- navbar -->
-    <!-- 
-    <nav class="navbar">
-      <div class="navbar-title-wrapper"> 
-        <h1 class="nav-title">KMON</h1>
-        <h3 class="nav-title-sub">Koreastock Monitoring Dashboard</h3>
-      </div>
-    </nav> 
-    -->
+  <div class="all-body"> 
 
-    <!-- body -->
+    <!-- sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <a class="sidebar-title-wrapper">
+        <img class="sidebar-icon" src="../common/img/KMON.png">
+        <span class="sidebar-title">KMON</span>
+      </a>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="main.html">
+            <img class="menu-icon" src="../common/img/Dashboard.png">
+            <span class="menu-title">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img class="menu-icon" src="../common/img/Element.png">
+            <span class="menu-title">Element</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="main.html">
+            <img class="menu-icon" src="../common/img/Alarm.png">
+            <span class="menu-title">Alarm</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img class="menu-icon" src="../common/img/Setting.png">
+            <span class="menu-title">Setting</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- sidebar end (좌측 sidebar) -->
+
+    <!-- container -->
     <div class="container-wrapper">
-      <!-- sidebar -->
-      <nav class="sidebar" id="sidebar">
-        <div class="sidebar-title-wrapper">
-          <img class="sidebar-icon" src="../common/img/KMON.png">
-          <h1 class="sidebar-title">KMON</h1>
-        </div>
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="main.html">
-              <img class="menu-icon" src="../common/img/Dashboard.png">
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <img class="menu-icon" src="../common/img/Elements.png">
-              <span class="menu-title">Elements</span>
-              <i class="menu-arrow"></i> 
-            </a>
-          </li>
-        </ul>
+      <!-- sidebar-fake -->
+      <nav class="sidebar-fake" id="sidebar">
       </nav>
       <!-- sidebar end (좌측 sidebar) -->
 
@@ -59,10 +68,47 @@
       <div class="main-panel">
         <div class="content-wrapper">
 
+          <!-- nav-checkbox -->
+          <div class="row">
+            <div class="row-content first-row-content">
+              <div class="item" id="row-1-col-1">
+                <div class="card card-rounded first-card">
+                  <div class="card-body">
+                    <ul class="nav-checkbox">
+                      <li class="nav-checkbox-refresh">
+                        <button class="btn-refresh"><img class="refresh-icon" src="../common/img/Refresh.png"></button>
+                      </li>
+                      <li class="nav-checkbox-all">
+                        <label class="nav-checkbox-all-wrapper">
+                          <span class="checkbox-title">전체</span>
+                          <span class="checkbox-action">
+                            <input type="checkbox" id="select-all">
+                            <i></i>
+                          </span>
+                        </label>
+                      </li>
+                      <li class="nav-checkbox-content">
+                        <label onclick="toggleChecked(this)">WTS<input type="checkbox"></label>
+                      </li>
+                      <li class="nav-checkbox-content">
+                        <label>WCont<input type="checkbox"></label>
+                      </li>
+                      <li class="nav-checkbox-content">
+                        <label>Example<input type="checkbox"></label>
+                      </li>
+                    </ul>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- contents -->
           <div class="row">
             <div class="row-content">
               
-              <div class="item" id="row-1-col-1">
+              <div class="item row-2-col-1" id="WTS">
                 <div class="card card-rounded">
                   <div class="card-body">
                     <div class="card-title-flex">
@@ -179,7 +225,7 @@
                 </div>
               </div>
 
-              <div class="item" id="row-1-col-2">
+              <div class="item row-2-col-2" id="WCont">
                 <div class="card card-rounded">
                   <div class="card-body">
                     <div class="card-title-flex">
@@ -272,8 +318,110 @@
                                 <h7>File</h7>
                                 <h7>HHMMSS</h7>
                                 <h7>1/1</h7>
+                              </button>                            
+                            </td>
+                          </tr>                  
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item row-2-col-3" id="Example">
+                <div class="card card-rounded">
+                  <div class="card-body">
+                    <div class="card-title-flex">
+                      <h4 class="card-title">Example</h4>
+                    </div>
+                    <div class="card-content">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>서버명</th>
+                            <th>상태</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <h6>pwtsws01</h6>
+                              <p>172.30.210.31</p>
+                            </td>
+                            <td id="table-button">
+                              <button type="button" class="btn btn-danger btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
                               </button>
-                              
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-danger btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-warning btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-warning btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <h6>pwtsws02</h6>
+                              <p>172.30.210.31</p>
+                            </td>
+                            <td id="table-button">
+                              <button type="button" class="btn btn-danger btn-rounded btn-fw">
+                                <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-warning btn-rounded btn-fw">
+                                <h7>File</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>                              
                             </td>
                           </tr>
                           <tr>
@@ -284,6 +432,41 @@
                             <td id="table-button">
                               <button type="button" class="btn btn-danger btn-rounded btn-fw">
                                 <h7>Jeus</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
+                                <h7>HHMMSS</h7>
+                                <h7>1/1</h7>
+                              </button>
+                              <button type="button" class="btn btn-success btn-rounded btn-fw">
+                                <h7>L4</h7>
                                 <h7>HHMMSS</h7>
                                 <h7>1/1</h7>
                               </button>
@@ -309,8 +492,51 @@
     <!-- container-wrapper end (상단 navbar 제외 아래)-->
   </div>
 
-  <!-- plugins:js -->
-  <script src="../common/js/jquery.js"></script>
+  <!--script -->
+  <script>
+
+    // 새로 고침
+    $('.btn-refresh').click(function(event){
+      location = location.href;
+    });
+
+    // 전체 선택
+    $('#select-all').click(function(event) {   
+      if(this.checked) {
+        $(':checkbox').each(function() {
+            this.checked = true;                        
+        });
+      } else {
+        $(':checkbox').each(function() {
+            this.checked = false;                       
+        });
+      }
+    });
+
+    // $(".nav-checkbox-content label").click(function() {
+    //   var contentTitle = $(this).text();
+    //   if($(this).is(":checked")) {
+    //     $('#' + contentTitle).show(100);
+    //   } else {
+    //     $('#' + contentTitle).hide(100);
+    //   }
+    // });
+
+    $(document).ready(function() {
+      //
+    });
+
+    function toggleChecked(thisObj) {
+      var contentTitle = thisObj.innerText;
+      if($(thisObj).is(":checked")) {
+        $('#' + contentTitle).hide(100);
+      } else {
+        $('#' + contentTitle).show(100);
+      }
+    };
+
+  </script>
+  
 
 </body>
 
