@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style>
+/* default */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, 
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video 
+{margin:0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+body {font-family: 'Noto Sans CJK KR', sans-serif; line-height: 1; letter-spacing: -0.24px;}
+
+/* background */ 
+html, body {height:100%; background-color: #f1f1f1;}
+#background-2 {height:215px; background-image: url('./common/img/bg_header.png'); background-position:center; background-size:cover; background-repeat:no-repeat;}
+
+
+/* font */ 
+@font-face {font-family: 'Noto Sans CJK KR'; src: url('./common/font/NotoSansKR-VariableFont_wght.ttf') format('truetype');}
+h1 {font-size: 20px;}
+h2 {font-size: 18px;}
+h3 {font-size: 14px;}
+h4 {font-size: 13px;}
+h5 {font-size: 12px;}
+h6 {font-size: 10px;}
+</style>
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+</head>
+<style>
+  #background-1 {height:100vh; background-image: url('./common/img/bg_cover_back_1.png'); background-size:cover; background-position:center; background-repeat:no-repeat;}
+  .cover-wrap {height:100%; display:flex; flex-direction:column; align-items:center;}
+  .cover-top {width:100%;height:60%; display:flex; flex-direction:column; justify-content:center; align-items:center; box-sizing:border-box; padding:20px 0;}
+  .cover-top .cover-top-img {max-width:100%; min-height:0; /*max-height:100%;*/ max-height:500px }
+  .cover-bottom {width:100%; height:40%; display:flex; flex-direction:column; align-items:center; box-sizing:border-box; padding:0 20px;}
+  .cover-bottom .cover-bottom-box {width:100%; height:100%; display:flex; flex-direction:column; backdrop-filter:blur(5px); background-image:linear-gradient(310deg, rgb(255 255 255 / 50%), rgb(255 255 255 / 80%)); box-sizing:border-box;}
+  .cover-bottom .cover-bottom-box.cover-bottom-box-before {border-radius:12px 12px 0 0; border-style:solid; border-width:1px; border-image-source:linear-gradient(310deg, rgb(255 255 255 / 30%), rgb(255 255 255 / 80%)); padding:20px 13px 0;}
+  .cover-bottom .cover-bottom-box.cover-bottom-box-after {position:absolute; top:0; justify-content:center; padding:0 33px;}
+  .cover-bottom .cover-bottom-box .cover-img-wrap {position:relative;}
+  .cover-bottom .cover-bottom-box .cover-img-wrap img.icon_money {width:51px; margin-bottom:12px;}
+  .cover-bottom .cover-bottom-box .cover-img-wrap img.icon_star1 {position:absolute; left:-10px; top:-25px; width:22px; display:none;}
+  .cover-bottom .cover-bottom-box .cover-img-wrap img.icon_star2 {position:absolute; left:50px; top:-10px; width:20px; display:none;}
+  .cover-bottom .cover-bottom-box .cover-title {font-weight:bold; font-stretch:normal; line-height:1.3; letter-spacing:-0.24px; text-align:left; color:#3a3a3a; margin:0 0 20px 5px;}
+  .cover-bottom .cover-bottom-box .cover-birthday {width:100%; height:50px; border-radius:8px; border:solid 1px #d4d4d4; background-color:#fff; box-sizing:border-box; padding:10px;}
+
+  .bounce {animation: bounce 2s linear infinite;}
+  .bounce {animation: bounce 1s cubic-bezier(.5, 0.05, 1, .5) alternate infinite;}
+  @keyframes bounce {
+    from {transform: translate3d(0, 0, 0);} 
+    to {transform: translate3d(0, 10px, 0);}
+  }
+
+  .change-star1 {animation: change-color-size 2s linear infinite;}
+  .change-star2 {animation: change-color-size-reverse 2s linear infinite;}
+  @keyframes change-color-size {
+    0%    {transform:scale(0.6); filter: hue-rotate(180deg)}
+    25%   {transform:scale(0.8); filter: hue-rotate(270deg)}
+    50%   {transform:scale(1); filter: hue-rotate(360deg)}
+    75%   {transform:scale(0.8); filter: hue-rotate(270deg)}
+    100%  {transform:scale(0.6); filter: hue-rotate(180deg)}
+  }
+  @keyframes change-color-size-reverse {
+    0%    {transform:scale(1); filter: hue-rotate(360deg)}
+    25%   {transform:scale(0.8); filter: hue-rotate(270deg)}
+    50%   {transform:scale(0.6); filter: hue-rotate(180deg)}
+    75%   {transform:scale(0.8); filter: hue-rotate(270deg)}
+    100%  {transform:scale(1); filter: hue-rotate(360deg)}
+  }
+
+</style>
+</head>
+<body id="background-1">
+  <div class="cover-wrap">
+    <div class="cover-top">
+      <img class="cover-top-img" src="./common/img/bg_cover_txt.png" alt="" />
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-bottom-box cover-bottom-box-before">
+        <div class="cover-img-wrap">
+          <img class="icon_money bounce" src="./common/img/icon_money.png" alt="">
+          <img class="icon_star1 change-star1" src="./common/img/icon_star1.png" alt="">
+          <img class="icon_star2 change-star2" src="./common/img/icon_star2.png" alt="">
+        </div>
+        <div class="cover-title">
+          <h1 class="cover-name">김한화님의</h1>
+          <h1 class="cover-doc">12월 거래내역 및 잔고 현황을<br>조회해 보세요!</h1>
+        </div>
+        <input type="text" class="cover-birthday" name="cover-birthday" required minlength="4" maxlength="8" size="10" placeholder="생년월일 6자리를 입력해 주세요"/>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+  $(document).ready(function(){
+    $(".cover-birthday").click(function(){
+      $(".cover-bottom-box").removeClass("cover-bottom-box-before").addClass("cover-bottom-box-after");
+      $(".icon_star1").show();
+      $(".icon_star2").show();
+    });
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>본인 확인</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      background: #fff;
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    .screen {
+      max-width: 375px;
+      margin: auto;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .status-bar {
+      height: 24px;
+      padding: 5px 10px;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      color: #000;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      padding: 16px 16px 0 16px;
+    }
+
+    .back-btn {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .step-indicator {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      color: #ff5a5a;
+    }
+
+    .step-indicator .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ccc;
+      margin-left: 6px;
+    }
+
+    .content {
+      padding: 24px 16px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .input-box {
+      border: 1px solid #ff5a5a;
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .input-box input {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .input-box input::placeholder {
+      color: #aaa;
+    }
+
+    .footer {
+      padding: 20px 16px;
+    }
+
+    .confirm-btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+      border-radius: 12px;
+      text-align: center;
+      background: #f5f5f5;
+      color: #aaa;
+      border: none;
+      cursor: default;
+    }
+
+    .confirm-btn.active {
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+
+
+		.inputs-container {display:flex; flex-direction:column; gap:12px;}
+		.input-box {display:flex; align-items: center; align-self:stretch; min-height:36px; padding:8px 16px; border:1px solid #D9D9D9; border-radius:12px;}
+
+  </style>
+</head>
+<body>
+  <div class="screen">
+    <div>
+      <div class="status-bar">
+        <span>5:13 PM</span>
+        <span>🔋 📶 📡</span>
+      </div>
+      <div class="top-bar">
+        <div class="back-btn">&lt;</div>
+        <div class="step-indicator">
+          <span>1</span>
+          <div class="dot"></div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="title">
+          본인 확인을 위해<br>
+          아래 정보를 입력해 주세요
+        </div>
+        <div class="inputs-container">
+					<div class="input-box">
+						<input type="text" id="name-input" placeholder="주민등록번호">
+					</div>
+					<div class="input-box">
+						<input type="text" id="name-input" placeholder="이름을 입력해주세요">
+					</div>					
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button id="confirm-btn" class="confirm-btn" disabled>확인</button>
+    </div>
+  </div>
+
+  <script>
+    $('#name-input').on('input', function() {
+      const val = $(this).val().trim();
+      if (val.length > 0) {
+        $('#confirm-btn').addClass('active').prop('disabled', false);
+      } else {
+        $('#confirm-btn').removeClass('active').prop('disabled', true);
+      }
+    });
+
+    $('#confirm-btn').on('click', function() {
+      if ($(this).hasClass('active')) {
+        alert("이름 확인: " + $('#name-input').val());
+      }
+    });
+  </script>
+</body>
+</html>
