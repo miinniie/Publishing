@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>본인 확인</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="./assets/agent.css">
+</head>
+<body>
+  <div class="screen">
+    <div class="header">
+      <div class="top-bar jstfy-cntnt-fs">
+        <img class="back-btn" src="./assets/img/btn_top_back.png" alt="">
+        <h3 class="top-title">대리인정보동의 수집 이용 동의</h3>
+      </div>
+
+      <div class="page-indicator">
+        <div class="dot">1</div>
+        <div class="dot">2</div>
+        <div class="dot active"><span>3</span></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="content-title">
+        본인 확인을 위해<br>
+        아래 정보를 입력해 주세요
+      </div>
+      <div class="content-inputs">
+        <div class="input-box">
+          <span class="input-title">인증번호 입력</span>
+          <input type="text" class="input-field t-algn-r" id="num-input">
+          <div class="input-timer">02:56</div>
+          <button class="request-btn active">재전송</button>
+        </div>						
+        <div class="input-box flex-col algn-items-strt">
+          <span class="input-title">휴대폰번호</span>
+          <div class="input-wrap flex-row">
+            <button class="toggle-btn">
+              <span>SKT</span>
+              <img class="arron-down-btn" src="./assets/img/btn_arrow_down.png" alt="">
+            </button>
+            <input type="text" class="input-field t-algn-l" id="phone-input" placeholder="010-1234-5678">
+            <button class="request-btn">인증번호</button>
+          </div>					
+        </div>					
+        <div class="input-box">
+          <span class="input-title">주민등록번호</span>
+          <input type="text" class="input-field t-algn-r" id="jumin-input" data-raw="">						
+        </div>
+        <div class="input-box focus">
+          <span class="input-title">이름</span>
+          <input type="text" class="input-field t-algn-r" id="name-input">
+          <button class="request-btn active">확인</button>
+        </div>					
+      </div>
+    </div>
+
+    <!-- Toast Popup -->
+    <div id="toast" class="toast show">
+      <img class="toast-icon" src="./assets/img/icon_toast_check.png" alt="">
+      <span class="toast-text">인증번호가 전송됐어요</span>
+    </div>
+
+    <div class="footer">
+      <button class="confirm-btn" id="" disabled>확인</button>
+    </div>
+  </div>
+
+  <script>
+    $('#name-input').on('input', function() {
+      const val = $(this).val().trim();
+      if (val.length > 0) {
+        $('#confirm-btn').addClass('active').prop('disabled', false);
+      } else {
+        $('#confirm-btn').removeClass('active').prop('disabled', true);
+      }
+    });
+
+    $('#confirm-btn').on('click', function() {
+      if ($(this).hasClass('active')) {
+        alert("이름 확인: " + $('#name-input').val());
+      }
+    });
+
+
+		//주민번호 마스킹 처리
+		$('#jumin-input').on('input', function () {
+    let input = $(this);
+    let val = input.data('raw') || '';
+
+    // Get only digits from the new value (in case of paste or edit)
+    let newVal = input.val().replace(/\D/g, '');
+
+    // Recalculate full raw value (prevent user from deleting dash/●)
+    val = newVal;
+
+    // Limit to 13 digits
+    if (val.length > 13) val = val.slice(0, 13);
+
+    input.data('raw', val); // Save raw unmasked value
+
+    // Build masked display
+    if (val.length >= 7) {
+      let first = val.slice(0, 6);
+      let gender = val.slice(6, 7);
+      let masked = '●'.repeat(val.length - 7);
+      input.val(`${first}-${gender}${masked}`);
+    } else {
+      input.val(val);
+    }
+  });
+  </script>
+</body>
+</html>
