@@ -4,7 +4,7 @@
 body {background: #ffffff; font-family:sans-serif; margin:0;}
 
 .screen {max-width:375px; height:100dvh; display:flex; flex-direction:column; justify-content:space-between; margin:auto; padding:0px 20px 30px;}
-
+.screen.bgrd {background-image: url('./img/cover_background.png'); background-size:cover; background-position:center; background-repeat:no-repeat; background-attachment:fixed;}
 
 /* header */
 .header {display:flex; flex-direction:column;} 
@@ -19,11 +19,16 @@ body {background: #ffffff; font-family:sans-serif; margin:0;}
 
 /* content */
 .content {display:flex; flex-direction:column; height:100%;}
-.content .content-title {font-size:20px; font-weight:bold; line-height:30px; margin-bottom:24px;}
+.content.center {align-items:center; justify-content:center;}
+.content .content-img {padding-bottom:24px;}
+.content .content-title {color:#040404; text-align:center; font-size:28px; font-weight:700; line-height:35px; letter-spacing:-0.5px;}
+.content .content-btn {display:flex; justify-content:center; align-items:center; width:125px; height:46px; padding:16px 18px; margin-top:30px; border:none; border-radius:50px; background:linear-gradient(90deg, #FF7F6E 0%, #FF9978 100%); font-size:14px; font-weight:700; color:#fff;}
+ 
 .content .content-terms {display:flex; flex:1; height:100%; margin-top:12px;}
 .content .content-terms .terms-text {width:100%; background-color:#f0f0f0; padding:10px 14px; overflow-y:auto;}
 
 .content-inputs {display:flex; flex-direction:column; gap:12px;}
+.input-title {font-size:20px; font-weight:bold; line-height:30px;}
 .input-box {display:flex; align-items:center; align-self:stretch; gap:8px; min-height:26px; padding:16px 16px; border:1px solid #d9d9d9; border-radius:12px;}
 .input-box.flex-col {flex-direction:column;}
 .input-box.flex-row {flex-direction:row;}
@@ -47,8 +52,9 @@ body {background: #ffffff; font-family:sans-serif; margin:0;}
 
 /* footer */
 .footer {}
-.footer .footer-shadow {height:24px; flex-shrink:0; background:#fff;
-background:linear-gradient(to top, white 0%, white 40%, transparent 100%);}
+.footer.m-50 {margin-bottom:50px;}
+.footer .footer-shadow {width:100%; height:24px; background:#fff; background:linear-gradient(to top, white 0%, white 50%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0) 100%);}
+.footer .footer-check {display:flex; align-items:center; gap:8px; padding-bottom:20px;}
 .footer .confirm-btn {display:flex; justify-content:center; align-items:center; height:56px; width:100%; background-color:#F6F6F6; padding:16px 18px; border:0px; border-radius:12px; font-size:16px; font-weight:700; pointer-events:none; z-index:1;}
 
 

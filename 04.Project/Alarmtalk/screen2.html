@@ -2,7 +2,6 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>본인 확인</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="./assets/agent.css">
@@ -23,11 +22,11 @@
     </div>
 
     <div class="content">
-      <div class="content-title">
-        본인 확인을 위해<br>
-        아래 정보를 입력해 주세요
-      </div>
       <div class="content-inputs">
+        <div class="input-title">
+          본인 확인을 위해<br>
+          아래 정보를 입력해 주세요          
+        </div>
         <div class="input-box">
           <span class="input-title">인증번호 입력</span>
           <input type="text" class="input-field t-algn-r" id="num-input">
@@ -57,7 +56,6 @@
       </div>
     </div>
 
-    <!-- Toast Popup -->
     <div id="toast" class="toast show">
       <img class="toast-icon" src="./assets/img/icon_toast_check.png" alt="">
       <span class="toast-text">인증번호가 전송됐어요</span>
