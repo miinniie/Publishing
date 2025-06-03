@@ -73,8 +73,3 @@ h1, h2, h3, h4, h5, h6, p {margin:0;}
 .footer .footer-check {display:flex; align-items:center; gap:8px; padding-bottom:20px;}
 .footer .confirm-btn {display:flex; justify-content:center; align-items:center; height:56px; width:100%; background-color:#F6F6F6; padding:16px 18px; border:0px; border-radius:12px; font-size:16px; font-weight:700; pointer-events:none; z-index:1;}
 .footer .confirm-btn.active {color:#fff; background:#ff7448;}
-
-
-/* 확인해야할 사항들
-responsive 반응형으로 개발
-*/
