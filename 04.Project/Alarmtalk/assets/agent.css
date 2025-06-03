@@ -2,8 +2,9 @@
 
 /* common */
 body {background: #ffffff; font-family:sans-serif; margin:0;}
+h1, h2, h3, h4, h5, h6, p {margin:0;}
 
-.screen {max-width:375px; height:100dvh; display:flex; flex-direction:column; justify-content:space-between; margin:auto; padding:0px 20px 30px;}
+.screen {position:relative; max-width:375px; height:100dvh; display:flex; flex-direction:column; justify-content:space-between; margin:0 auto; padding:0px 20px 30px;}
 .screen.bgrd {background-image: url('./img/cover_background.png'); background-size:cover; background-position:center; background-repeat:no-repeat; background-attachment:fixed;}
 
 /* header */
@@ -20,35 +21,50 @@ body {background: #ffffff; font-family:sans-serif; margin:0;}
 /* content */
 .content {display:flex; flex-direction:column; height:100%;}
 .content.center {align-items:center; justify-content:center;}
-.content .content-img {padding-bottom:24px;}
-.content .content-title {color:#040404; text-align:center; font-size:28px; font-weight:700; line-height:35px; letter-spacing:-0.5px;}
-.content .content-btn {display:flex; justify-content:center; align-items:center; width:125px; height:46px; padding:16px 18px; margin-top:30px; border:none; border-radius:50px; background:linear-gradient(90deg, #FF7F6E 0%, #FF9978 100%); font-size:14px; font-weight:700; color:#fff;}
- 
-.content .content-terms {display:flex; flex:1; height:100%; margin-top:12px;}
-.content .content-terms .terms-text {width:100%; background-color:#f0f0f0; padding:10px 14px; overflow-y:auto;}
+
+.content-box {display:flex; flex-direction:column; align-items:center;}
+.content-box .box-img {padding-bottom:24px;}
+.content-box .box-text {color:#040404; text-align:center; font-size:24px; font-weight:700; line-height:35px; letter-spacing:-0.5px;}
+.content-box .box-text.f-28 {font-size:28px;}
+.content-box .box-text.f-24 {font-size:24px;}
+.content-box .box-btn {display:flex; justify-content:center; align-items:center; width:125px; height:46px; padding:16px 18px; margin-top:30px; border:none; border-radius:50px; background:linear-gradient(90deg, #FF7F6E 0%, #FF9978 100%); font-size:14px; font-weight:700; color:#fff;}
+
+.content-terms {display:flex; flex:1; height:100%; margin-top:12px;}
+.content-terms .terms-text {width:100%; background-color:#f0f0f0; padding:10px 14px; overflow-y:auto;}
+
+.content-pwds {display:flex; flex-direction:column; align-items:center;}
+.content-pwds .pwd-title {font-size:22px; font-weight:700; line-height:30px; margin-top:16px;}
+.content-pwds .pwd-sub-title {color:#828282; text-align:center; font-size:14px; font-weight:400; line-height:14px; margin-top:10px;}
+.content-pwds .dot-container {display:flex; justify-content:center; gap:20px; margin:36px 0px 35px 0;}
+.content-pwds .dot-container .dot {width:16px; height:16px; border-radius:50%; background:#ccc;}
+.content-pwds .dot-container .dot.active {background-color:#333}
+.content-pwds .pwd-msg {color:#fc541f; text-align:center; font-size:14px; font-weight:400; line-height:20px;}
 
 .content-inputs {display:flex; flex-direction:column; gap:12px;}
-.input-title {font-size:20px; font-weight:bold; line-height:30px;}
-.input-box {display:flex; align-items:center; align-self:stretch; gap:8px; min-height:26px; padding:16px 16px; border:1px solid #d9d9d9; border-radius:12px;}
-.input-box.flex-col {flex-direction:column;}
-.input-box.flex-row {flex-direction:row;}
-.input-box.algn-items-strt {align-items:flex-start;}
-.input-box {font-size:14px;}
-.input-box.focus {border:1px solid #ff7f48; box-shadow:0px 0px 12px 0px rgba(255, 127, 72, 0.20);}
-.input-box input {width:100%; border:none; outline:none; font-size:16px;}
-.input-box .input-wrap {display:flex; gap:8px; width:100%;}
-.input-box .input-wrap.flex-col {flex-direction:column;}
-.input-box .input-wrap.flex-row {flex-direction:row;}
-.input-box .input-title {font-size:12px; color:#919191; white-space:nowrap;}
-.input-box .input-field {}
-.input-box .input-field::placeholder {color:#c8c8c8; font-size:14px;}
-.input-box .input-field.t-algn-l {text-align:left;} 
-.input-box .input-field.t-algn-r {text-align:right;}
-.input-box .input-timer {color:#FF7F48; font-size:12px}
-.input-box button.toggle-btn {display:flex; justify-content:space-between; align-items:center; width:auto; min-width:96px; min-height:26px; padding:4px 8px; border:none; border-radius:6px; background:#f6f6f6; color:#6f6f6f; text-align:center; font-size:12px; font-weight:400; white-space:nowrap; cursor:default;}
-.input-box button.request-btn {display:flex; justify-content:center; align-items:center; width:auto; min-width:unset; min-height:26px; padding:4px 8px; border:none; border-radius:6px; background:#f6f6f6; color:#6f6f6f; text-align:center; font-size:12px; font-weight:400; white-space:nowrap; cursor:default;}
-.input-box button.request-btn.active {background:#000000; color:#ddd; cursor:pointer;}
+.content-inputs .input-title {font-size:20px; font-weight:bold; line-height:30px;}
+.content-inputs .input-box {display:none; min-height:26px; padding:16px 16px; border:1px solid #d9d9d9; border-radius:12px; font-size:14px;}
+.content-inputs .input-box.on {display:flex; align-items:center; align-self:stretch; gap:8px;}
+.content-inputs .input-box.focus {border:1px solid #ff7f48; box-shadow:0px 0px 12px 0px rgba(255, 127, 72, 0.20);}
+.content-inputs .input-box.flex-col {flex-direction:column;}
+.content-inputs .input-box.flex-row {flex-direction:row;}
+.content-inputs .input-box.algn-items-strt {align-items:flex-start;}
+.content-inputs .input-box input {width:100%; border:none; outline:none; font-size:16px;}
+.content-inputs .input-box .input-wrap {display:flex; gap:8px; width:100%;}
+.content-inputs .input-box .input-wrap.flex-col {flex-direction:column;}
+.content-inputs .input-box .input-wrap.flex-row {flex-direction:row;}
+.content-inputs .input-box .input-title {font-size:12px; color:#919191; white-space:nowrap;}
+.content-inputs .input-box .input-field {width:100%;}
+.content-inputs .input-box .input-field::placeholder {color:#c8c8c8; font-size:14px;}
+.content-inputs .input-box .input-field.t-algn-l {text-align:left;} 
+.content-inputs .input-box .input-field.t-algn-r {text-align:right;}
+.content-inputs .input-box .input-timer {color:#FF7F48; font-size:12px}
+.content-inputs .input-box button.toggle-btn {display:flex; justify-content:space-between; align-items:center; width:auto; min-width:96px; min-height:26px; padding:4px 8px; border:none; border-radius:6px; background:#f6f6f6; color:#6f6f6f; text-align:center; font-size:12px; font-weight:400; white-space:nowrap; cursor:default;}
+.content-inputs .input-box button.request-btn {display:flex; justify-content:center; align-items:center; width:auto; min-width:unset; min-height:26px; padding:4px 8px; border:none; border-radius:6px; background:#f6f6f6; color:#6f6f6f; text-align:center; font-size:12px; font-weight:400; white-space:nowrap; cursor:default;}
+.content-inputs .input-box button.request-btn.active {background:#000000; color:#ddd; cursor:pointer;}
 
+/* toast */
+.toast {position:absolute; bottom:110px; display:flex; width:calc(100% - 40px); z-index:9999; display:none;}
+.toast .toast-box {display:flex; align-items:center; gap:10px; padding:10px 12px; background:rgba(0, 0, 0, 0.6); border-radius:12px; color:#fff; font-size:12px; font-weight:700; line-height:20px;}
 
 /* footer */
 .footer {}
@@ -56,9 +72,9 @@ body {background: #ffffff; font-family:sans-serif; margin:0;}
 .footer .footer-shadow {width:100%; height:24px; background:#fff; background:linear-gradient(to top, white 0%, white 50%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0) 100%);}
 .footer .footer-check {display:flex; align-items:center; gap:8px; padding-bottom:20px;}
 .footer .confirm-btn {display:flex; justify-content:center; align-items:center; height:56px; width:100%; background-color:#F6F6F6; padding:16px 18px; border:0px; border-radius:12px; font-size:16px; font-weight:700; pointer-events:none; z-index:1;}
+.footer .confirm-btn.active {color:#fff; background:#ff7448;}
 
 
-/* toast */
-.toast {display:flex; align-items:center; justify-content:flex-start; gap:10px; width:100%; height:28px; padding:10px 12px; border-radius:12px; background:rgba(0, 0, 0, 0.60); color:#fff; font-size:12px; font-weight:700;}
-.toast.show {opacity:1; bottom:100px;}
-.toast.hidden {display:none;}
+/* 확인해야할 사항들
+responsive 반응형으로 개발
+*/

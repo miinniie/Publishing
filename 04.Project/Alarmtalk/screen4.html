@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./assets/agent.js"></script>
   <link rel="stylesheet" href="./assets/agent.css">
 </head>
 <body class="">
@@ -15,10 +16,21 @@
       </div>
     </div>
     <div class="content center">
-      <div class="content-pwd">
-        <img class="content-img" src="./assets/img/img_complete.png" alt="">
+      <div class="content-pwds">
+        <img class="" src="./assets/img/img_password.png" alt="">
+        <h3 class="pwd-title">계좌 비밀번호 인증</h3>
+        <p class="pwd-sub-title">비밀번호를 입력해주세요.</p>
+        <div class="dot-container">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <p class="pwd-msg">
+          비밀번호가 일치하지 않습니다. (1/5) <br/>
+          5회 오류 초과 시 사고등록 됩니다.
+        </p>
       </div>
-      <button class="content-btn">안내 종료</button>
     </div>
     <div class="footer m-50"></div>
   </div>
