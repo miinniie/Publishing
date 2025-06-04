@@ -62,9 +62,34 @@ h1, h2, h3, h4, h5, h6, p {margin:0;}
 .content-inputs .input-box button.request-btn {display:flex; justify-content:center; align-items:center; width:auto; min-width:unset; min-height:26px; padding:4px 8px; border:none; border-radius:6px; background:#f6f6f6; color:#6f6f6f; text-align:center; font-size:12px; font-weight:400; white-space:nowrap; cursor:default;}
 .content-inputs .input-box button.request-btn.active {background:#000000; color:#ddd; cursor:pointer;}
 
-/* toast */
-.toast {position:absolute; bottom:110px; display:flex; width:calc(100% - 40px); z-index:9999; display:none;}
+/* toast */ 
+.toast {position:fixed; width:100%; bottom:0; left:50%; transform:translateX(-50%); z-index:9999; margin:0 auto; display:none;}
+.toast.agent {bottom:120px; width:calc(100% - 40px);}
 .toast .toast-box {display:flex; align-items:center; gap:10px; padding:10px 12px; background:rgba(0, 0, 0, 0.6); border-radius:12px; color:#fff; font-size:12px; font-weight:700; line-height:20px;}
+
+
+/*
+.toast {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: none;
+}
+
+.toast-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 12px;
+}
+*/
 
 /* footer */
 .footer {}

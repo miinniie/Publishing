@@ -66,7 +66,10 @@ function initStep3() {
   $btn.on('click', () => {
     if (!$btn.hasClass('active')) return;
 
-    showToast('인증번호가 전송됐어요');
+    showToast('인증번호가 전송됐어요', 'success', {
+      bottom:100,
+      paddingX:20,
+    });
     transitionFocusBox('#num-box', '#num-input');
     startAuthCountdown();
   });
@@ -87,7 +90,10 @@ function initStep4() {
   $resendBtn.on('click', () => {
     if (!$resendBtn.hasClass('active')) return;
 
-    showToast('인증번호가 전송됐어요');
+    showToast('인증번호가 전송됐어요', 'success', {
+      bottom:100,
+      paddingX:20,
+    });
     startAuthCountdown();
   });
 }
@@ -129,25 +135,42 @@ function transitionFocusBox(nextBoxId, nextInputId) {
   $(nextInputId).focus();
 }
 
+/**
+ * 공통: toast
+ * @param {string} msg - 표시할 메시지 텍스트
+ * @param {string} [type='success'] - 토스트 타입 ('success' | 'error'), 아이콘
+ * @param {object} [options] - 위치 및 스타일 설정을 위한 옵션
+ * @param {number} [options.bottom=120] - 토스트의 하단 여백 (px)
+ * @param {number} [options.paddingX=20] - 좌우(x축) 여백
+ */
+function showToast(msg, type = 'success', options = {}) {
+  const {
+    bottom = 120,
+    paddingX = 20,
+  } = options;
 
-/** 공통: toast */
-function showToast(message, type = 'success') {
-  const $toast = $('.toast');
-  if ($toast.length === 0) return;
-
-  const $toastBox = $toast.find('.toast-box');
-  const $icon = $toastBox.find('.toast-icon');
-  const $msg = $toastBox.find('.toast-msg');
+  $('.toast').remove();
 
   const iconMap = {
     success: './assets/img/icon_toast_check.png',
     error: './assets/img/icon_toast_error.png',
   };
-  $icon.attr('src', iconMap[type] || iconMap.success);
-  $msg.text(message);
 
+  const $toast = $(`
+    <div class="toast">
+      <div class="toast-box">
+        <img class="toast-icon" src="${iconMap[type] || iconMap.success}" alt="">
+        <span class="toast-msg">${msg}</span>
+      </div>
+    </div>
+  `).css({
+    bottom: `${bottom}px`,
+    width: `calc(100% - ${paddingX * 2}px)`,
+  });
+  $('body').append($toast);
+  
   $toast.fadeIn(200);
   setTimeout(() => {
-    $toast.fadeOut(200);
+    $toast.fadeOut(200, () => $toast.remove());
   }, 2400);
 }
